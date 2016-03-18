@@ -3,6 +3,7 @@
 ## Objectives
 
 1. Use Kaminari to paginate songs.
+2. TESTING
 
 ## Song Library
 
