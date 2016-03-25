@@ -2131,3 +2131,103 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs" for ::1 at 2016-03-25 15:22:30 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (1.0ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0
+  Rendered songs/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 246ms (Views: 238.8ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs" for ::1 at 2016-03-25 15:22:58 -0700
+Processing by SongsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.8ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0
+  Rendered songs/index.html.erb within layouts/application (411.5ms)
+Completed 200 OK in 419ms (Views: 417.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2016-03-25 15:22:59 -0700
+
+
+Started GET "/songs?page=2" for ::1 at 2016-03-25 15:23:22 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.2ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 20
+  Rendered songs/index.html.erb within layouts/application (27.7ms)
+Completed 200 OK in 37ms (Views: 35.5ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/songs?page=3" for ::1 at 2016-03-25 15:23:24 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.9ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 40
+  Rendered songs/index.html.erb within layouts/application (25.8ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs?page=4" for ::1 at 2016-03-25 15:23:25 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.7ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 60
+  Rendered songs/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 40ms (Views: 37.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/songs?page=5" for ::1 at 2016-03-25 15:23:27 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.0ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 80
+  Rendered songs/index.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs?page=6" for ::1 at 2016-03-25 15:23:28 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"6"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.9ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 100
+  Rendered songs/index.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 41ms (Views: 38.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/songs?page=7" for ::1 at 2016-03-25 15:23:29 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"7"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.6ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 120
+  Rendered songs/index.html.erb within layouts/application (29.1ms)
+Completed 200 OK in 40ms (Views: 38.1ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/songs?page=26" for ::1 at 2016-03-25 15:23:30 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"26"}
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (1.6ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 500
+  [1m[36mArtist Load (0.2ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 6]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 6]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 5]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 4]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 3]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 3]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered songs/index.html.erb within layouts/application (35.3ms)
+Completed 200 OK in 46ms (Views: 43.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/songs" for ::1 at 2016-03-25 15:23:31 -0700
+Processing by SongsController#index as HTML
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.7ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0
+  Rendered songs/index.html.erb within layouts/application (18.6ms)
+Completed 200 OK in 26ms (Views: 25.3ms | ActiveRecord: 0.8ms)
