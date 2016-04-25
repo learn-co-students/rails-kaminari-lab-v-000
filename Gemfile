@@ -8,6 +8,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'faker'
 
+#paginator
+
+gem 'kaminari'
+
 group :development, :test do
   gem 'pry'
   gem 'capybara'
