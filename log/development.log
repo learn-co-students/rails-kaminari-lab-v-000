@@ -2131,3 +2131,78 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs" for 72.231.3.109 at 2016-06-02 19:49:19 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  Rendered songs/index.html.erb within layouts/application (4.3ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `total_pages' for nil:NilClass):
+    1: <ul>
+    2: <%= paginate @posts, window: 2 %>
+    3: <% @songs.each do |song| %>
+    4:   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
+    5: <% end %>
+  app/views/songs/index.html.erb:2:in `_app_views_songs_index_html_erb___2375482492427734830_35058580'
+
+
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.1ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (10.7ms)
+  Rendered /usr/local/rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (34.2ms)
+
+
+Started GET "/songs" for 72.231.3.109 at 2016-06-02 19:49:29 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.1ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (359.3ms)
+Completed 200 OK in 569ms (Views: 565.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for 72.231.3.109 at 2016-06-02 19:49:30 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+
+
+Started GET "/songs?page=2" for 72.231.3.109 at 2016-06-02 19:49:32 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.3ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 20[0m
+  Rendered songs/index.html.erb within layouts/application (21.4ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/songs?page=3" for 72.231.3.109 at 2016-06-02 19:49:34 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.2ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 40[0m
+  Rendered songs/index.html.erb within layouts/application (19.8ms)
+Completed 200 OK in 25ms (Views: 21.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/songs?page=4" for 72.231.3.109 at 2016-06-02 19:49:34 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.3ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 60[0m
+  Rendered songs/index.html.erb within layouts/application (21.2ms)
+Completed 200 OK in 26ms (Views: 23.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/songs?page=5" for 72.231.3.109 at 2016-06-02 19:49:36 -0400
+Cannot render console from 72.231.3.109! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.6ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 80[0m
+  Rendered songs/index.html.erb within layouts/application (24.3ms)
+Completed 200 OK in 32ms (Views: 28.1ms | ActiveRecord: 2.8ms)
