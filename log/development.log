@@ -2131,3 +2131,74 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs" for ::1 at 2016-08-20 18:10:45 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35mSong Load (1.0ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" DESC LIMIT 20 OFFSET 0
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (693.7ms)
+Completed 200 OK in 1026ms (Views: 1019.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/songs?page=2" for ::1 at 2016-08-20 18:10:50 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[35mSong Load (1.0ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" DESC LIMIT 20 OFFSET 20
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (75.9ms)
+Completed 200 OK in 93ms (Views: 91.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs?page=3" for ::1 at 2016-08-20 18:11:02 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35mSong Load (1.0ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" DESC LIMIT 20 OFFSET 40
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 86ms (Views: 84.2ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs?page=4" for ::1 at 2016-08-20 18:11:03 -0400
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[35mSong Load (2.3ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" DESC LIMIT 20 OFFSET 60
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  Rendered songs/index.html.erb within layouts/application (69.4ms)
+Completed 200 OK in 86ms (Views: 83.3ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/songs/319/edit" for ::1 at 2016-08-20 18:11:04 -0400
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"319"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 319]]
+  Rendered songs/edit.html.erb within layouts/application (6.0ms)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.2ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x007f9d967e7120>):
+    1: <h1>Editing <%= @song.name %></h1>
+    2: 
+    3: <%= render 'form' %>
+  app/views/songs/edit.html.erb:1:in `_app_views_songs_edit_html_erb__3340125281521572682_70157405727920'
+
+
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.5ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (8.7ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.5ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (131.8ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (104.6ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (1.2ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/mhsimon/.rvm/gems/ruby-2.2.3/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (227.5ms)
+
+
+Started GET "/songs/new" for ::1 at 2016-08-20 18:11:09 -0400
+Processing by SongsController#new as HTML
+  Rendered songs/_form.html.erb (19.3ms)
+  Rendered songs/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 38ms (Views: 37.1ms | ActiveRecord: 0.0ms)
