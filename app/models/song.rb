@@ -1,5 +1,6 @@
 class Song < ActiveRecord::Base
   belongs_to :artist
+  paginates_per 20
 
   def artist_name
     self.try(:artist).try(:name)
