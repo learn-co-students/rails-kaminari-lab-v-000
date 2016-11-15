@@ -11,10 +11,10 @@ gem 'faker'
 group :development, :test do
   gem 'pry'
   gem 'capybara'
+  gem 'kaminari'
   gem 'rspec-rails'
 end
 
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
