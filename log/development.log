@@ -2131,3 +2131,1081 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to AddArtistToSong (20160126235547)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  CREATE TEMPORARY TABLE "asongs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "artist_id" integer) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
+  [1m[35m (0.0ms)[0m  select sqlite_version(*)
+  [1m[36m (0.1ms)[0m  [1mCREATE  INDEX "tindex_asongs_on_artist_id" ON "asongs" ("artist_id")[0m
+  [1m[35m (2.2ms)[0m  SELECT * FROM "songs"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (1, 'Song 2', '2016-01-27 00:20:14.516774', '2016-01-27 00:20:14.516774', 1)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (2, 'Flood', '2016-01-27 04:06:26.286464', '2016-01-27 04:06:26.286464', 2)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (3, 'Mr. Brightside', '2016-02-07 04:26:43.623572', '2016-02-07 04:26:43.623572', 3)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (4, 'Jenny Was a Friend of Mine', '2016-02-07 04:26:43.627134', '2016-02-07 04:26:43.627134', 3)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (5, 'Jenny', '2016-02-07 04:26:43.631901', '2016-02-07 04:26:43.631901', 4)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (6, 'Around the World', '2016-02-07 04:26:43.636929', '2016-02-07 04:26:43.636929', 5)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (7, 'Harder, Better, Faster, Stronger', '2016-02-07 04:26:43.639941', '2016-02-07 04:26:43.639941', 5)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (8, 'Where is My Mind?', '2016-02-07 04:26:43.644397', '2016-02-07 04:26:43.644397', 6)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (9, 'Gigantic', '2016-02-07 04:26:43.647117', '2016-02-07 04:26:43.647117', 6)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (10, 'Monkey Gone to Heaven', '2016-02-07 04:26:43.649652', '2016-02-07 04:26:43.649652', 6)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (11, 'dolorem', '2016-02-07 04:26:43.982867', '2016-02-07 04:26:43.982867', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (12, 'praesentium', '2016-02-07 04:26:43.985450', '2016-02-07 04:26:43.985450', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (13, 'iusto', '2016-02-07 04:26:43.987551', '2016-02-07 04:26:43.987551', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (14, 'et', '2016-02-07 04:26:43.989547', '2016-02-07 04:26:43.989547', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (15, 'consectetur', '2016-02-07 04:26:43.991624', '2016-02-07 04:26:43.991624', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (16, 'ipsum', '2016-02-07 04:26:43.993653', '2016-02-07 04:26:43.993653', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (17, 'sed', '2016-02-07 04:26:43.995898', '2016-02-07 04:26:43.995898', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (18, 'velit', '2016-02-07 04:26:43.998464', '2016-02-07 04:26:43.998464', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (19, 'libero', '2016-02-07 04:26:44.000701', '2016-02-07 04:26:44.000701', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (20, 'dolorum', '2016-02-07 04:26:44.002573', '2016-02-07 04:26:44.002573', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (21, 'rerum', '2016-02-07 04:26:44.005202', '2016-02-07 04:26:44.005202', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (22, 'laboriosam', '2016-02-07 04:26:44.007291', '2016-02-07 04:26:44.007291', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (23, 'sed', '2016-02-07 04:26:44.009334', '2016-02-07 04:26:44.009334', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (24, 'libero', '2016-02-07 04:26:44.011145', '2016-02-07 04:26:44.011145', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (25, 'quidem', '2016-02-07 04:26:44.013201', '2016-02-07 04:26:44.013201', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (26, 'nihil', '2016-02-07 04:26:44.015256', '2016-02-07 04:26:44.015256', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (27, 'et', '2016-02-07 04:26:44.017444', '2016-02-07 04:26:44.017444', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (28, 'sit', '2016-02-07 04:26:44.019382', '2016-02-07 04:26:44.019382', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (29, 'omnis', '2016-02-07 04:26:44.021333', '2016-02-07 04:26:44.021333', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (30, 'et', '2016-02-07 04:26:44.023394', '2016-02-07 04:26:44.023394', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (31, 'odio', '2016-02-07 04:26:44.025467', '2016-02-07 04:26:44.025467', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (32, 'modi', '2016-02-07 04:26:44.027745', '2016-02-07 04:26:44.027745', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (33, 'ut', '2016-02-07 04:26:44.029784', '2016-02-07 04:26:44.029784', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (34, 'possimus', '2016-02-07 04:26:44.031832', '2016-02-07 04:26:44.031832', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (35, 'hic', '2016-02-07 04:26:44.033834', '2016-02-07 04:26:44.033834', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (36, 'laudantium', '2016-02-07 04:26:44.035781', '2016-02-07 04:26:44.035781', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (37, 'ratione', '2016-02-07 04:26:44.037944', '2016-02-07 04:26:44.037944', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (38, 'sint', '2016-02-07 04:26:44.040077', '2016-02-07 04:26:44.040077', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (39, 'aliquam', '2016-02-07 04:26:44.042148', '2016-02-07 04:26:44.042148', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (40, 'quo', '2016-02-07 04:26:44.044589', '2016-02-07 04:26:44.044589', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (41, 'a', '2016-02-07 04:26:44.047817', '2016-02-07 04:26:44.047817', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (42, 'quia', '2016-02-07 04:26:44.050254', '2016-02-07 04:26:44.050254', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (43, 'non', '2016-02-07 04:26:44.052580', '2016-02-07 04:26:44.052580', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (44, 'sint', '2016-02-07 04:26:44.055213', '2016-02-07 04:26:44.055213', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (45, 'nihil', '2016-02-07 04:26:44.057863', '2016-02-07 04:26:44.057863', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (46, 'laborum', '2016-02-07 04:26:44.060524', '2016-02-07 04:26:44.060524', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (47, 'officia', '2016-02-07 04:26:44.062918', '2016-02-07 04:26:44.062918', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (48, 'et', '2016-02-07 04:26:44.065131', '2016-02-07 04:26:44.065131', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (49, 'quos', '2016-02-07 04:26:44.066934', '2016-02-07 04:26:44.066934', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (50, 'ex', '2016-02-07 04:26:44.068680', '2016-02-07 04:26:44.068680', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (51, 'minima', '2016-02-07 04:26:44.070699', '2016-02-07 04:26:44.070699', NULL)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (52, 'quos', '2016-02-07 04:26:44.072769', '2016-02-07 04:26:44.072769', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (53, 'rerum', '2016-02-07 04:26:44.074593', '2016-02-07 04:26:44.074593', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (54, 'nemo', '2016-02-07 04:26:44.076307', '2016-02-07 04:26:44.076307', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (55, 'pariatur', '2016-02-07 04:26:44.078005', '2016-02-07 04:26:44.078005', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (56, 'explicabo', '2016-02-07 04:26:44.080362', '2016-02-07 04:26:44.080362', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (57, 'et', '2016-02-07 04:26:44.082394', '2016-02-07 04:26:44.082394', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (58, 'ad', '2016-02-07 04:26:44.084205', '2016-02-07 04:26:44.084205', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (59, 'ipsum', '2016-02-07 04:26:44.085990', '2016-02-07 04:26:44.085990', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (60, 'quis', '2016-02-07 04:26:44.087918', '2016-02-07 04:26:44.087918', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (61, 'laborum', '2016-02-07 04:26:44.089970', '2016-02-07 04:26:44.089970', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (62, 'cum', '2016-02-07 04:26:44.092312', '2016-02-07 04:26:44.092312', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (63, 'reiciendis', '2016-02-07 04:26:44.094267', '2016-02-07 04:26:44.094267', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (64, 'porro', '2016-02-07 04:26:44.096527', '2016-02-07 04:26:44.096527', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (65, 'voluptate', '2016-02-07 04:26:44.098666', '2016-02-07 04:26:44.098666', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (66, 'dignissimos', '2016-02-07 04:26:44.100578', '2016-02-07 04:26:44.100578', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (67, 'inventore', '2016-02-07 04:26:44.102647', '2016-02-07 04:26:44.102647', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (68, 'in', '2016-02-07 04:26:44.104835', '2016-02-07 04:26:44.104835', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (69, 'aut', '2016-02-07 04:26:44.106741', '2016-02-07 04:26:44.106741', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (70, 'laborum', '2016-02-07 04:26:44.108497', '2016-02-07 04:26:44.108497', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (71, 'sit', '2016-02-07 04:26:44.110216', '2016-02-07 04:26:44.110216', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (72, 'expedita', '2016-02-07 04:26:44.112219', '2016-02-07 04:26:44.112219', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (73, 'nemo', '2016-02-07 04:26:44.114396', '2016-02-07 04:26:44.114396', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (74, 'debitis', '2016-02-07 04:26:44.116301', '2016-02-07 04:26:44.116301', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (75, 'quia', '2016-02-07 04:26:44.118445', '2016-02-07 04:26:44.118445', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (76, 'architecto', '2016-02-07 04:26:44.120645', '2016-02-07 04:26:44.120645', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (77, 'et', '2016-02-07 04:26:44.122509', '2016-02-07 04:26:44.122509', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (78, 'omnis', '2016-02-07 04:26:44.124506', '2016-02-07 04:26:44.124506', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (79, 'quia', '2016-02-07 04:26:44.126557', '2016-02-07 04:26:44.126557', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (80, 'consectetur', '2016-02-07 04:26:44.128532', '2016-02-07 04:26:44.128532', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (81, 'animi', '2016-02-07 04:26:44.130552', '2016-02-07 04:26:44.130552', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (82, 'unde', '2016-02-07 04:26:44.132499', '2016-02-07 04:26:44.132499', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (83, 'iusto', '2016-02-07 04:26:44.134270', '2016-02-07 04:26:44.134270', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (84, 'hic', '2016-02-07 04:26:44.136356', '2016-02-07 04:26:44.136356', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (85, 'est', '2016-02-07 04:26:44.138284', '2016-02-07 04:26:44.138284', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (86, 'itaque', '2016-02-07 04:26:44.140341', '2016-02-07 04:26:44.140341', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (87, 'molestiae', '2016-02-07 04:26:44.142430', '2016-02-07 04:26:44.142430', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (88, 'a', '2016-02-07 04:26:44.144522', '2016-02-07 04:26:44.144522', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (89, 'magnam', '2016-02-07 04:26:44.146899', '2016-02-07 04:26:44.146899', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (90, 'et', '2016-02-07 04:26:44.149062', '2016-02-07 04:26:44.149062', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (91, 'placeat', '2016-02-07 04:26:44.150837', '2016-02-07 04:26:44.150837', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (92, 'ut', '2016-02-07 04:26:44.152791', '2016-02-07 04:26:44.152791', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (93, 'harum', '2016-02-07 04:26:44.154593', '2016-02-07 04:26:44.154593', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (94, 'minus', '2016-02-07 04:26:44.156670', '2016-02-07 04:26:44.156670', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (95, 'unde', '2016-02-07 04:26:44.158643', '2016-02-07 04:26:44.158643', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (96, 'voluptates', '2016-02-07 04:26:44.160663', '2016-02-07 04:26:44.160663', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (97, 'enim', '2016-02-07 04:26:44.162517', '2016-02-07 04:26:44.162517', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (98, 'voluptatem', '2016-02-07 04:26:44.164354', '2016-02-07 04:26:44.164354', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (99, 'perspiciatis', '2016-02-07 04:26:44.166141', '2016-02-07 04:26:44.166141', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (100, 'ex', '2016-02-07 04:26:44.168130', '2016-02-07 04:26:44.168130', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (101, 'deserunt', '2016-02-07 04:26:44.170093', '2016-02-07 04:26:44.170093', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (102, 'est', '2016-02-07 04:26:44.171868', '2016-02-07 04:26:44.171868', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (103, 'rerum', '2016-02-07 04:26:44.173555', '2016-02-07 04:26:44.173555', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (104, 'exercitationem', '2016-02-07 04:26:44.175399', '2016-02-07 04:26:44.175399', NULL)
+  [1m[36m (1.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (105, 'qui', '2016-02-07 04:26:44.177683', '2016-02-07 04:26:44.177683', NULL)[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (106, 'sunt', '2016-02-07 04:26:44.180050', '2016-02-07 04:26:44.180050', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (107, 'est', '2016-02-07 04:26:44.182134', '2016-02-07 04:26:44.182134', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (108, 'magni', '2016-02-07 04:26:44.183947', '2016-02-07 04:26:44.183947', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (109, 'rerum', '2016-02-07 04:26:44.185701', '2016-02-07 04:26:44.185701', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (110, 'placeat', '2016-02-07 04:26:44.187456', '2016-02-07 04:26:44.187456', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (111, 'maxime', '2016-02-07 04:26:44.189346', '2016-02-07 04:26:44.189346', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (112, 'ipsa', '2016-02-07 04:26:44.191381', '2016-02-07 04:26:44.191381', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (113, 'et', '2016-02-07 04:26:44.193195', '2016-02-07 04:26:44.193195', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (114, 'et', '2016-02-07 04:26:44.194902', '2016-02-07 04:26:44.194902', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (115, 'beatae', '2016-02-07 04:26:44.196801', '2016-02-07 04:26:44.196801', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (116, 'aliquam', '2016-02-07 04:26:44.198882', '2016-02-07 04:26:44.198882', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (117, 'accusantium', '2016-02-07 04:26:44.201003', '2016-02-07 04:26:44.201003', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (118, 'repellendus', '2016-02-07 04:26:44.203009', '2016-02-07 04:26:44.203009', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (119, 'voluptas', '2016-02-07 04:26:44.204936', '2016-02-07 04:26:44.204936', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (120, 'est', '2016-02-07 04:26:44.206886', '2016-02-07 04:26:44.206886', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (121, 'sunt', '2016-02-07 04:26:44.209215', '2016-02-07 04:26:44.209215', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (122, 'et', '2016-02-07 04:26:44.211419', '2016-02-07 04:26:44.211419', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (123, 'nostrum', '2016-02-07 04:26:44.213608', '2016-02-07 04:26:44.213608', NULL)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (124, 'unde', '2016-02-07 04:26:44.215684', '2016-02-07 04:26:44.215684', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (125, 'ea', '2016-02-07 04:26:44.217466', '2016-02-07 04:26:44.217466', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (126, 'quis', '2016-02-07 04:26:44.219177', '2016-02-07 04:26:44.219177', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (127, 'non', '2016-02-07 04:26:44.221201', '2016-02-07 04:26:44.221201', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (128, 'iste', '2016-02-07 04:26:44.223230', '2016-02-07 04:26:44.223230', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (129, 'quidem', '2016-02-07 04:26:44.225148', '2016-02-07 04:26:44.225148', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (130, 'ea', '2016-02-07 04:26:44.226885', '2016-02-07 04:26:44.226885', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (131, 'totam', '2016-02-07 04:26:44.228626', '2016-02-07 04:26:44.228626', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (132, 'qui', '2016-02-07 04:26:44.230827', '2016-02-07 04:26:44.230827', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (133, 'qui', '2016-02-07 04:26:44.233177', '2016-02-07 04:26:44.233177', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (134, 'id', '2016-02-07 04:26:44.235346', '2016-02-07 04:26:44.235346', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (135, 'qui', '2016-02-07 04:26:44.237139', '2016-02-07 04:26:44.237139', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (136, 'alias', '2016-02-07 04:26:44.238814', '2016-02-07 04:26:44.238814', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (137, 'nostrum', '2016-02-07 04:26:44.240954', '2016-02-07 04:26:44.240954', NULL)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (138, 'cupiditate', '2016-02-07 04:26:44.243177', '2016-02-07 04:26:44.243177', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (139, 'laborum', '2016-02-07 04:26:44.245083', '2016-02-07 04:26:44.245083', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (140, 'inventore', '2016-02-07 04:26:44.247066', '2016-02-07 04:26:44.247066', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (141, 'voluptas', '2016-02-07 04:26:44.252026', '2016-02-07 04:26:44.252026', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (142, 'dicta', '2016-02-07 04:26:44.256021', '2016-02-07 04:26:44.256021', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (143, 'sunt', '2016-02-07 04:26:44.258316', '2016-02-07 04:26:44.258316', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (144, 'et', '2016-02-07 04:26:44.260195', '2016-02-07 04:26:44.260195', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (145, 'ea', '2016-02-07 04:26:44.261944', '2016-02-07 04:26:44.261944', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (146, 'error', '2016-02-07 04:26:44.264069', '2016-02-07 04:26:44.264069', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (147, 'a', '2016-02-07 04:26:44.266218', '2016-02-07 04:26:44.266218', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (148, 'dolor', '2016-02-07 04:26:44.268117', '2016-02-07 04:26:44.268117', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (149, 'qui', '2016-02-07 04:26:44.269906', '2016-02-07 04:26:44.269906', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (150, 'veniam', '2016-02-07 04:26:44.271901', '2016-02-07 04:26:44.271901', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (151, 'ut', '2016-02-07 04:26:44.273744', '2016-02-07 04:26:44.273744', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (152, 'alias', '2016-02-07 04:26:44.275768', '2016-02-07 04:26:44.275768', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (153, 'doloremque', '2016-02-07 04:26:44.277869', '2016-02-07 04:26:44.277869', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (154, 'reiciendis', '2016-02-07 04:26:44.280180', '2016-02-07 04:26:44.280180', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (155, 'quo', '2016-02-07 04:26:44.282442', '2016-02-07 04:26:44.282442', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (156, 'reprehenderit', '2016-02-07 04:26:44.284312', '2016-02-07 04:26:44.284312', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (157, 'et', '2016-02-07 04:26:44.286024', '2016-02-07 04:26:44.286024', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (158, 'id', '2016-02-07 04:26:44.288093', '2016-02-07 04:26:44.288093', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (159, 'in', '2016-02-07 04:26:44.290237', '2016-02-07 04:26:44.290237', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (160, 'voluptatem', '2016-02-07 04:26:44.292074', '2016-02-07 04:26:44.292074', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (161, 'aut', '2016-02-07 04:26:44.293797', '2016-02-07 04:26:44.293797', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (162, 'et', '2016-02-07 04:26:44.295670', '2016-02-07 04:26:44.295670', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (163, 'et', '2016-02-07 04:26:44.297708', '2016-02-07 04:26:44.297708', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (164, 'veniam', '2016-02-07 04:26:44.299723', '2016-02-07 04:26:44.299723', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (165, 'quasi', '2016-02-07 04:26:44.301791', '2016-02-07 04:26:44.301791', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (166, 'unde', '2016-02-07 04:26:44.303835', '2016-02-07 04:26:44.303835', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (167, 'accusantium', '2016-02-07 04:26:44.305694', '2016-02-07 04:26:44.305694', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (168, 'quo', '2016-02-07 04:26:44.307630', '2016-02-07 04:26:44.307630', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (169, 'ut', '2016-02-07 04:26:44.309870', '2016-02-07 04:26:44.309870', NULL)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (170, 'quis', '2016-02-07 04:26:44.312310', '2016-02-07 04:26:44.312310', NULL)
+  [1m[36m (0.6ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (171, 'sed', '2016-02-07 04:26:44.314552', '2016-02-07 04:26:44.314552', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (172, 'expedita', '2016-02-07 04:26:44.316433', '2016-02-07 04:26:44.316433', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (173, 'voluptatem', '2016-02-07 04:26:44.318117', '2016-02-07 04:26:44.318117', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (174, 'impedit', '2016-02-07 04:26:44.319824', '2016-02-07 04:26:44.319824', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (175, 'possimus', '2016-02-07 04:26:44.321803', '2016-02-07 04:26:44.321803', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (176, 'et', '2016-02-07 04:26:44.323841', '2016-02-07 04:26:44.323841', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (177, 'nisi', '2016-02-07 04:26:44.325745', '2016-02-07 04:26:44.325745', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (178, 'aut', '2016-02-07 04:26:44.327557', '2016-02-07 04:26:44.327557', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (179, 'earum', '2016-02-07 04:26:44.329458', '2016-02-07 04:26:44.329458', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (180, 'in', '2016-02-07 04:26:44.331966', '2016-02-07 04:26:44.331966', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (181, 'nemo', '2016-02-07 04:26:44.334030', '2016-02-07 04:26:44.334030', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (182, 'totam', '2016-02-07 04:26:44.335875', '2016-02-07 04:26:44.335875', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (183, 'eos', '2016-02-07 04:26:44.337642', '2016-02-07 04:26:44.337642', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (184, 'consequatur', '2016-02-07 04:26:44.339337', '2016-02-07 04:26:44.339337', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (185, 'magni', '2016-02-07 04:26:44.341107', '2016-02-07 04:26:44.341107', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (186, 'exercitationem', '2016-02-07 04:26:44.343148', '2016-02-07 04:26:44.343148', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (187, 'modi', '2016-02-07 04:26:44.345377', '2016-02-07 04:26:44.345377', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (188, 'est', '2016-02-07 04:26:44.347425', '2016-02-07 04:26:44.347425', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (189, 'cum', '2016-02-07 04:26:44.349649', '2016-02-07 04:26:44.349649', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (190, 'omnis', '2016-02-07 04:26:44.351535', '2016-02-07 04:26:44.351535', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (191, 'pariatur', '2016-02-07 04:26:44.353532', '2016-02-07 04:26:44.353532', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (192, 'eius', '2016-02-07 04:26:44.355493', '2016-02-07 04:26:44.355493', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (193, 'aut', '2016-02-07 04:26:44.357519', '2016-02-07 04:26:44.357519', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (194, 'et', '2016-02-07 04:26:44.359367', '2016-02-07 04:26:44.359367', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (195, 'voluptatem', '2016-02-07 04:26:44.361045', '2016-02-07 04:26:44.361045', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (196, 'nemo', '2016-02-07 04:26:44.363202', '2016-02-07 04:26:44.363202', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (197, 'officia', '2016-02-07 04:26:44.365586', '2016-02-07 04:26:44.365586', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (198, 'facilis', '2016-02-07 04:26:44.367780', '2016-02-07 04:26:44.367780', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (199, 'aut', '2016-02-07 04:26:44.369713', '2016-02-07 04:26:44.369713', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (200, 'et', '2016-02-07 04:26:44.371483', '2016-02-07 04:26:44.371483', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (201, 'nostrum', '2016-02-07 04:26:44.373214', '2016-02-07 04:26:44.373214', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (202, 'quae', '2016-02-07 04:26:44.374888', '2016-02-07 04:26:44.374888', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (203, 'commodi', '2016-02-07 04:26:44.376918', '2016-02-07 04:26:44.376918', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (204, 'nobis', '2016-02-07 04:26:44.379003', '2016-02-07 04:26:44.379003', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (205, 'ad', '2016-02-07 04:26:44.381012', '2016-02-07 04:26:44.381012', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (206, 'repudiandae', '2016-02-07 04:26:44.382916', '2016-02-07 04:26:44.382916', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (207, 'quos', '2016-02-07 04:26:44.384867', '2016-02-07 04:26:44.384867', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (208, 'nihil', '2016-02-07 04:26:44.387040', '2016-02-07 04:26:44.387040', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (209, 'minus', '2016-02-07 04:26:44.389046', '2016-02-07 04:26:44.389046', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (210, 'culpa', '2016-02-07 04:26:44.391018', '2016-02-07 04:26:44.391018', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (211, 'consequatur', '2016-02-07 04:26:44.393508', '2016-02-07 04:26:44.393508', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (212, 'veniam', '2016-02-07 04:26:44.395457', '2016-02-07 04:26:44.395457', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (213, 'at', '2016-02-07 04:26:44.397449', '2016-02-07 04:26:44.397449', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (214, 'non', '2016-02-07 04:26:44.399637', '2016-02-07 04:26:44.399637', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (215, 'aspernatur', '2016-02-07 04:26:44.401748', '2016-02-07 04:26:44.401748', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (216, 'molestiae', '2016-02-07 04:26:44.403707', '2016-02-07 04:26:44.403707', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (217, 'excepturi', '2016-02-07 04:26:44.405473', '2016-02-07 04:26:44.405473', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (218, 'recusandae', '2016-02-07 04:26:44.407171', '2016-02-07 04:26:44.407171', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (219, 'corrupti', '2016-02-07 04:26:44.408915', '2016-02-07 04:26:44.408915', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (220, 'eaque', '2016-02-07 04:26:44.411179', '2016-02-07 04:26:44.411179', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (221, 'ut', '2016-02-07 04:26:44.413295', '2016-02-07 04:26:44.413295', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (222, 'quia', '2016-02-07 04:26:44.415228', '2016-02-07 04:26:44.415228', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (223, 'incidunt', '2016-02-07 04:26:44.416955', '2016-02-07 04:26:44.416955', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (224, 'voluptatem', '2016-02-07 04:26:44.418823', '2016-02-07 04:26:44.418823', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (225, 'quaerat', '2016-02-07 04:26:44.420557', '2016-02-07 04:26:44.420557', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (226, 'repudiandae', '2016-02-07 04:26:44.423120', '2016-02-07 04:26:44.423120', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (227, 'perferendis', '2016-02-07 04:26:44.426002', '2016-02-07 04:26:44.426002', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (228, 'accusamus', '2016-02-07 04:26:44.428086', '2016-02-07 04:26:44.428086', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (229, 'sequi', '2016-02-07 04:26:44.430395', '2016-02-07 04:26:44.430395', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (230, 'autem', '2016-02-07 04:26:44.432535', '2016-02-07 04:26:44.432535', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (231, 'distinctio', '2016-02-07 04:26:44.434902', '2016-02-07 04:26:44.434902', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (232, 'adipisci', '2016-02-07 04:26:44.437067', '2016-02-07 04:26:44.437067', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (233, 'qui', '2016-02-07 04:26:44.439213', '2016-02-07 04:26:44.439213', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (234, 'aspernatur', '2016-02-07 04:26:44.447165', '2016-02-07 04:26:44.447165', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (235, 'animi', '2016-02-07 04:26:44.452624', '2016-02-07 04:26:44.452624', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (236, 'aut', '2016-02-07 04:26:44.454842', '2016-02-07 04:26:44.454842', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (237, 'nulla', '2016-02-07 04:26:44.457156', '2016-02-07 04:26:44.457156', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (238, 'ratione', '2016-02-07 04:26:44.459597', '2016-02-07 04:26:44.459597', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (239, 'ut', '2016-02-07 04:26:44.461402', '2016-02-07 04:26:44.461402', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (240, 'quia', '2016-02-07 04:26:44.463236', '2016-02-07 04:26:44.463236', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (241, 'laboriosam', '2016-02-07 04:26:44.465475', '2016-02-07 04:26:44.465475', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (242, 'atque', '2016-02-07 04:26:44.467671', '2016-02-07 04:26:44.467671', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (243, 'corrupti', '2016-02-07 04:26:44.469579', '2016-02-07 04:26:44.469579', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (244, 'asperiores', '2016-02-07 04:26:44.471430', '2016-02-07 04:26:44.471430', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (245, 'dolorem', '2016-02-07 04:26:44.473304', '2016-02-07 04:26:44.473304', NULL)[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (246, 'perspiciatis', '2016-02-07 04:26:44.475140', '2016-02-07 04:26:44.475140', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (247, 'laboriosam', '2016-02-07 04:26:44.477121', '2016-02-07 04:26:44.477121', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (248, 'id', '2016-02-07 04:26:44.479234', '2016-02-07 04:26:44.479234', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (249, 'est', '2016-02-07 04:26:44.481306', '2016-02-07 04:26:44.481306', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (250, 'similique', '2016-02-07 04:26:44.483303', '2016-02-07 04:26:44.483303', NULL)
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (251, 'tempore', '2016-02-07 04:26:44.485316', '2016-02-07 04:26:44.485316', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (252, 'nesciunt', '2016-02-07 04:26:44.487259', '2016-02-07 04:26:44.487259', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (253, 'unde', '2016-02-07 04:26:44.489435', '2016-02-07 04:26:44.489435', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (254, 'non', '2016-02-07 04:26:44.491593', '2016-02-07 04:26:44.491593', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (255, 'sit', '2016-02-07 04:26:44.493524', '2016-02-07 04:26:44.493524', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (256, 'consequuntur', '2016-02-07 04:26:44.495363', '2016-02-07 04:26:44.495363', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (257, 'ut', '2016-02-07 04:26:44.497442', '2016-02-07 04:26:44.497442', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (258, 'molestiae', '2016-02-07 04:26:44.499651', '2016-02-07 04:26:44.499651', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (259, 'aut', '2016-02-07 04:26:44.501615', '2016-02-07 04:26:44.501615', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (260, 'qui', '2016-02-07 04:26:44.503560', '2016-02-07 04:26:44.503560', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (261, 'aspernatur', '2016-02-07 04:26:44.505568', '2016-02-07 04:26:44.505568', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (262, 'distinctio', '2016-02-07 04:26:44.507407', '2016-02-07 04:26:44.507407', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (263, 'sequi', '2016-02-07 04:26:44.509515', '2016-02-07 04:26:44.509515', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (264, 'voluptatibus', '2016-02-07 04:26:44.511517', '2016-02-07 04:26:44.511517', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (265, 'pariatur', '2016-02-07 04:26:44.513552', '2016-02-07 04:26:44.513552', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (266, 'animi', '2016-02-07 04:26:44.515626', '2016-02-07 04:26:44.515626', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (267, 'numquam', '2016-02-07 04:26:44.517480', '2016-02-07 04:26:44.517480', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (268, 'quia', '2016-02-07 04:26:44.519413', '2016-02-07 04:26:44.519413', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (269, 'et', '2016-02-07 04:26:44.521523', '2016-02-07 04:26:44.521523', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (270, 'ea', '2016-02-07 04:26:44.523616', '2016-02-07 04:26:44.523616', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (271, 'velit', '2016-02-07 04:26:44.525558', '2016-02-07 04:26:44.525558', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (272, 'laudantium', '2016-02-07 04:26:44.527400', '2016-02-07 04:26:44.527400', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (273, 'omnis', '2016-02-07 04:26:44.529240', '2016-02-07 04:26:44.529240', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (274, 'aut', '2016-02-07 04:26:44.531625', '2016-02-07 04:26:44.531625', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (275, 'qui', '2016-02-07 04:26:44.533782', '2016-02-07 04:26:44.533782', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (276, 'sunt', '2016-02-07 04:26:44.535689', '2016-02-07 04:26:44.535689', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (277, 'quas', '2016-02-07 04:26:44.537612', '2016-02-07 04:26:44.537612', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (278, 'et', '2016-02-07 04:26:44.539329', '2016-02-07 04:26:44.539329', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (279, 'quis', '2016-02-07 04:26:44.541094', '2016-02-07 04:26:44.541094', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (280, 'veniam', '2016-02-07 04:26:44.543179', '2016-02-07 04:26:44.543179', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (281, 'dolorum', '2016-02-07 04:26:44.545207', '2016-02-07 04:26:44.545207', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (282, 'qui', '2016-02-07 04:26:44.547838', '2016-02-07 04:26:44.547838', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (283, 'voluptatem', '2016-02-07 04:26:44.549770', '2016-02-07 04:26:44.549770', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (284, 'labore', '2016-02-07 04:26:44.551470', '2016-02-07 04:26:44.551470', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (285, 'ipsa', '2016-02-07 04:26:44.553286', '2016-02-07 04:26:44.553286', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (286, 'qui', '2016-02-07 04:26:44.555345', '2016-02-07 04:26:44.555345', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (287, 'eveniet', '2016-02-07 04:26:44.557248', '2016-02-07 04:26:44.557248', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (288, 'neque', '2016-02-07 04:26:44.559016', '2016-02-07 04:26:44.559016', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (289, 'laudantium', '2016-02-07 04:26:44.560670', '2016-02-07 04:26:44.560670', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (290, 'dolore', '2016-02-07 04:26:44.562640', '2016-02-07 04:26:44.562640', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (291, 'vitae', '2016-02-07 04:26:44.565351', '2016-02-07 04:26:44.565351', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (292, 'mollitia', '2016-02-07 04:26:44.567367', '2016-02-07 04:26:44.567367', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (293, 'nobis', '2016-02-07 04:26:44.569210', '2016-02-07 04:26:44.569210', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (294, 'maxime', '2016-02-07 04:26:44.571091', '2016-02-07 04:26:44.571091', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (295, 'quo', '2016-02-07 04:26:44.572890', '2016-02-07 04:26:44.572890', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (296, 'ut', '2016-02-07 04:26:44.574664', '2016-02-07 04:26:44.574664', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (297, 'accusantium', '2016-02-07 04:26:44.576816', '2016-02-07 04:26:44.576816', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (298, 'sint', '2016-02-07 04:26:44.578912', '2016-02-07 04:26:44.578912', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (299, 'ex', '2016-02-07 04:26:44.581032', '2016-02-07 04:26:44.581032', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (300, 'corrupti', '2016-02-07 04:26:44.583130', '2016-02-07 04:26:44.583130', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (301, 'ad', '2016-02-07 04:26:44.584984', '2016-02-07 04:26:44.584984', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (302, 'quos', '2016-02-07 04:26:44.587133', '2016-02-07 04:26:44.587133', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (303, 'quia', '2016-02-07 04:26:44.589284', '2016-02-07 04:26:44.589284', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (304, 'minima', '2016-02-07 04:26:44.591290', '2016-02-07 04:26:44.591290', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (305, 'dolorem', '2016-02-07 04:26:44.593028', '2016-02-07 04:26:44.593028', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (306, 'aut', '2016-02-07 04:26:44.595081', '2016-02-07 04:26:44.595081', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (307, 'odio', '2016-02-07 04:26:44.597181', '2016-02-07 04:26:44.597181', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (308, 'adipisci', '2016-02-07 04:26:44.599270', '2016-02-07 04:26:44.599270', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (309, 'reiciendis', '2016-02-07 04:26:44.601359', '2016-02-07 04:26:44.601359', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (310, 'nemo', '2016-02-07 04:26:44.603263', '2016-02-07 04:26:44.603263', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (311, 'repellendus', '2016-02-07 04:26:44.604950', '2016-02-07 04:26:44.604950', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (312, 'ad', '2016-02-07 04:26:44.606631', '2016-02-07 04:26:44.606631', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (313, 'harum', '2016-02-07 04:26:44.608602', '2016-02-07 04:26:44.608602', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (314, 'aliquam', '2016-02-07 04:26:44.610791', '2016-02-07 04:26:44.610791', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (315, 'totam', '2016-02-07 04:26:44.612694', '2016-02-07 04:26:44.612694', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (316, 'nihil', '2016-02-07 04:26:44.614589', '2016-02-07 04:26:44.614589', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (317, 'consequatur', '2016-02-07 04:26:44.616332', '2016-02-07 04:26:44.616332', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (318, 'amet', '2016-02-07 04:26:44.618574', '2016-02-07 04:26:44.618574', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (319, 'sint', '2016-02-07 04:26:44.620850', '2016-02-07 04:26:44.620850', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (320, 'ad', '2016-02-07 04:26:44.622857', '2016-02-07 04:26:44.622857', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (321, 'architecto', '2016-02-07 04:26:44.624716', '2016-02-07 04:26:44.624716', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (322, 'aut', '2016-02-07 04:26:44.626742', '2016-02-07 04:26:44.626742', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (323, 'omnis', '2016-02-07 04:26:44.628717', '2016-02-07 04:26:44.628717', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (324, 'vel', '2016-02-07 04:26:44.630602', '2016-02-07 04:26:44.630602', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (325, 'recusandae', '2016-02-07 04:26:44.632609', '2016-02-07 04:26:44.632609', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (326, 'explicabo', '2016-02-07 04:26:44.634613', '2016-02-07 04:26:44.634613', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (327, 'neque', '2016-02-07 04:26:44.636395', '2016-02-07 04:26:44.636395', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (328, 'ab', '2016-02-07 04:26:44.638176', '2016-02-07 04:26:44.638176', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (329, 'quis', '2016-02-07 04:26:44.640001', '2016-02-07 04:26:44.640001', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (330, 'tenetur', '2016-02-07 04:26:44.642297', '2016-02-07 04:26:44.642297', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (331, 'vel', '2016-02-07 04:26:44.644345', '2016-02-07 04:26:44.644345', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (332, 'dolores', '2016-02-07 04:26:44.646140', '2016-02-07 04:26:44.646140', NULL)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (333, 'aut', '2016-02-07 04:26:44.648136', '2016-02-07 04:26:44.648136', NULL)[0m
+  [1m[35m (0.4ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (334, 'nihil', '2016-02-07 04:26:44.650208', '2016-02-07 04:26:44.650208', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (335, 'ut', '2016-02-07 04:26:44.652125', '2016-02-07 04:26:44.652125', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (336, 'saepe', '2016-02-07 04:26:44.654155', '2016-02-07 04:26:44.654155', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (337, 'at', '2016-02-07 04:26:44.656163', '2016-02-07 04:26:44.656163', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (338, 'ullam', '2016-02-07 04:26:44.657971', '2016-02-07 04:26:44.657971', NULL)
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (339, 'ipsam', '2016-02-07 04:26:44.659745', '2016-02-07 04:26:44.659745', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (340, 'nemo', '2016-02-07 04:26:44.661433', '2016-02-07 04:26:44.661433', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (341, 'doloremque', '2016-02-07 04:26:44.663745', '2016-02-07 04:26:44.663745', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (342, 'qui', '2016-02-07 04:26:44.665958', '2016-02-07 04:26:44.665958', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (343, 'totam', '2016-02-07 04:26:44.667952', '2016-02-07 04:26:44.667952', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (344, 'autem', '2016-02-07 04:26:44.670051', '2016-02-07 04:26:44.670051', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (345, 'doloremque', '2016-02-07 04:26:44.671896', '2016-02-07 04:26:44.671896', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (346, 'qui', '2016-02-07 04:26:44.673691', '2016-02-07 04:26:44.673691', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (347, 'laudantium', '2016-02-07 04:26:44.675916', '2016-02-07 04:26:44.675916', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (348, 'nulla', '2016-02-07 04:26:44.677899', '2016-02-07 04:26:44.677899', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (349, 'animi', '2016-02-07 04:26:44.679872', '2016-02-07 04:26:44.679872', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (350, 'eum', '2016-02-07 04:26:44.682011', '2016-02-07 04:26:44.682011', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (351, 'at', '2016-02-07 04:26:44.683819', '2016-02-07 04:26:44.683819', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (352, 'velit', '2016-02-07 04:26:44.686073', '2016-02-07 04:26:44.686073', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (353, 'odio', '2016-02-07 04:26:44.687999', '2016-02-07 04:26:44.687999', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (354, 'ratione', '2016-02-07 04:26:44.689937', '2016-02-07 04:26:44.689937', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (355, 'nihil', '2016-02-07 04:26:44.691762', '2016-02-07 04:26:44.691762', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (356, 'ut', '2016-02-07 04:26:44.693444', '2016-02-07 04:26:44.693444', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (357, 'repudiandae', '2016-02-07 04:26:44.695184', '2016-02-07 04:26:44.695184', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (358, 'ut', '2016-02-07 04:26:44.697673', '2016-02-07 04:26:44.697673', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (359, 'ut', '2016-02-07 04:26:44.700106', '2016-02-07 04:26:44.700106', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (360, 'illo', '2016-02-07 04:26:44.701995', '2016-02-07 04:26:44.701995', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (361, 'provident', '2016-02-07 04:26:44.703717', '2016-02-07 04:26:44.703717', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (362, 'natus', '2016-02-07 04:26:44.705556', '2016-02-07 04:26:44.705556', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (363, 'saepe', '2016-02-07 04:26:44.707353', '2016-02-07 04:26:44.707353', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (364, 'dolorem', '2016-02-07 04:26:44.709329', '2016-02-07 04:26:44.709329', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (365, 'illum', '2016-02-07 04:26:44.711264', '2016-02-07 04:26:44.711264', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (366, 'dolores', '2016-02-07 04:26:44.713271', '2016-02-07 04:26:44.713271', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (367, 'excepturi', '2016-02-07 04:26:44.715264', '2016-02-07 04:26:44.715264', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (368, 'est', '2016-02-07 04:26:44.717133', '2016-02-07 04:26:44.717133', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (369, 'consequatur', '2016-02-07 04:26:44.719306', '2016-02-07 04:26:44.719306', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (370, 'doloribus', '2016-02-07 04:26:44.721531', '2016-02-07 04:26:44.721531', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (371, 'ut', '2016-02-07 04:26:44.723488', '2016-02-07 04:26:44.723488', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (372, 'quaerat', '2016-02-07 04:26:44.725337', '2016-02-07 04:26:44.725337', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (373, 'minima', '2016-02-07 04:26:44.727089', '2016-02-07 04:26:44.727089', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (374, 'ut', '2016-02-07 04:26:44.728790', '2016-02-07 04:26:44.728790', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (375, 'architecto', '2016-02-07 04:26:44.731408', '2016-02-07 04:26:44.731408', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (376, 'fugit', '2016-02-07 04:26:44.733345', '2016-02-07 04:26:44.733345', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (377, 'blanditiis', '2016-02-07 04:26:44.735096', '2016-02-07 04:26:44.735096', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (378, 'ut', '2016-02-07 04:26:44.736796', '2016-02-07 04:26:44.736796', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (379, 'facilis', '2016-02-07 04:26:44.738762', '2016-02-07 04:26:44.738762', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (380, 'quis', '2016-02-07 04:26:44.740478', '2016-02-07 04:26:44.740478', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (381, 'ab', '2016-02-07 04:26:44.742540', '2016-02-07 04:26:44.742540', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (382, 'et', '2016-02-07 04:26:44.744361', '2016-02-07 04:26:44.744361', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (383, 'voluptas', '2016-02-07 04:26:44.746306', '2016-02-07 04:26:44.746306', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (384, 'vel', '2016-02-07 04:26:44.748469', '2016-02-07 04:26:44.748469', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (385, 'iure', '2016-02-07 04:26:44.750377', '2016-02-07 04:26:44.750377', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (386, 'impedit', '2016-02-07 04:26:44.752490', '2016-02-07 04:26:44.752490', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (387, 'excepturi', '2016-02-07 04:26:44.754776', '2016-02-07 04:26:44.754776', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (388, 'placeat', '2016-02-07 04:26:44.756742', '2016-02-07 04:26:44.756742', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (389, 'autem', '2016-02-07 04:26:44.758504', '2016-02-07 04:26:44.758504', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (390, 'quia', '2016-02-07 04:26:44.760205', '2016-02-07 04:26:44.760205', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (391, 'ipsa', '2016-02-07 04:26:44.762023', '2016-02-07 04:26:44.762023', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (392, 'voluptas', '2016-02-07 04:26:44.764715', '2016-02-07 04:26:44.764715', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (393, 'numquam', '2016-02-07 04:26:44.766824', '2016-02-07 04:26:44.766824', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (394, 'quia', '2016-02-07 04:26:44.768751', '2016-02-07 04:26:44.768751', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (395, 'et', '2016-02-07 04:26:44.770833', '2016-02-07 04:26:44.770833', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (396, 'rerum', '2016-02-07 04:26:44.773475', '2016-02-07 04:26:44.773475', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (397, 'eum', '2016-02-07 04:26:44.775868', '2016-02-07 04:26:44.775868', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (398, 'praesentium', '2016-02-07 04:26:44.778036', '2016-02-07 04:26:44.778036', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (399, 'et', '2016-02-07 04:26:44.780619', '2016-02-07 04:26:44.780619', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (400, 'non', '2016-02-07 04:26:44.782833', '2016-02-07 04:26:44.782833', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (401, 'voluptates', '2016-02-07 04:26:44.784710', '2016-02-07 04:26:44.784710', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (402, 'quis', '2016-02-07 04:26:44.787468', '2016-02-07 04:26:44.787468', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (403, 'sed', '2016-02-07 04:26:44.789498', '2016-02-07 04:26:44.789498', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (404, 'incidunt', '2016-02-07 04:26:44.791446', '2016-02-07 04:26:44.791446', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (405, 'non', '2016-02-07 04:26:44.793739', '2016-02-07 04:26:44.793739', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (406, 'hic', '2016-02-07 04:26:44.795655', '2016-02-07 04:26:44.795655', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (407, 'voluptatem', '2016-02-07 04:26:44.798177', '2016-02-07 04:26:44.798177', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (408, 'adipisci', '2016-02-07 04:26:44.800241', '2016-02-07 04:26:44.800241', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (409, 'et', '2016-02-07 04:26:44.802315', '2016-02-07 04:26:44.802315', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (410, 'exercitationem', '2016-02-07 04:26:44.804266', '2016-02-07 04:26:44.804266', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (411, 'doloremque', '2016-02-07 04:26:44.805992', '2016-02-07 04:26:44.805992', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (412, 'iusto', '2016-02-07 04:26:44.808074', '2016-02-07 04:26:44.808074', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (413, 'molestiae', '2016-02-07 04:26:44.810099', '2016-02-07 04:26:44.810099', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (414, 'rem', '2016-02-07 04:26:44.811909', '2016-02-07 04:26:44.811909', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (415, 'praesentium', '2016-02-07 04:26:44.813916', '2016-02-07 04:26:44.813916', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (416, 'quo', '2016-02-07 04:26:44.816127', '2016-02-07 04:26:44.816127', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (417, 'aspernatur', '2016-02-07 04:26:44.818014', '2016-02-07 04:26:44.818014', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (418, 'voluptate', '2016-02-07 04:26:44.820884', '2016-02-07 04:26:44.820884', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (419, 'dolorem', '2016-02-07 04:26:44.823179', '2016-02-07 04:26:44.823179', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (420, 'quo', '2016-02-07 04:26:44.825055', '2016-02-07 04:26:44.825055', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (421, 'quia', '2016-02-07 04:26:44.827125', '2016-02-07 04:26:44.827125', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (422, 'libero', '2016-02-07 04:26:44.829035', '2016-02-07 04:26:44.829035', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (423, 'iste', '2016-02-07 04:26:44.831196', '2016-02-07 04:26:44.831196', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (424, 'sed', '2016-02-07 04:26:44.833435', '2016-02-07 04:26:44.833435', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (425, 'maxime', '2016-02-07 04:26:44.835459', '2016-02-07 04:26:44.835459', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (426, 'minima', '2016-02-07 04:26:44.837268', '2016-02-07 04:26:44.837268', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (427, 'nam', '2016-02-07 04:26:44.843372', '2016-02-07 04:26:44.843372', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (428, 'qui', '2016-02-07 04:26:44.845733', '2016-02-07 04:26:44.845733', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (429, 'explicabo', '2016-02-07 04:26:44.847784', '2016-02-07 04:26:44.847784', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (430, 'est', '2016-02-07 04:26:44.849820', '2016-02-07 04:26:44.849820', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (431, 'laudantium', '2016-02-07 04:26:44.851648', '2016-02-07 04:26:44.851648', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (432, 'rerum', '2016-02-07 04:26:44.854182', '2016-02-07 04:26:44.854182', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (433, 'possimus', '2016-02-07 04:26:44.856160', '2016-02-07 04:26:44.856160', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (434, 'qui', '2016-02-07 04:26:44.859984', '2016-02-07 04:26:44.859984', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (435, 'atque', '2016-02-07 04:26:44.862006', '2016-02-07 04:26:44.862006', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (436, 'velit', '2016-02-07 04:26:44.864488', '2016-02-07 04:26:44.864488', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (437, 'est', '2016-02-07 04:26:44.867148', '2016-02-07 04:26:44.867148', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (438, 'et', '2016-02-07 04:26:44.869008', '2016-02-07 04:26:44.869008', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (439, 'eos', '2016-02-07 04:26:44.870808', '2016-02-07 04:26:44.870808', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (440, 'qui', '2016-02-07 04:26:44.872527', '2016-02-07 04:26:44.872527', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (441, 'et', '2016-02-07 04:26:44.874858', '2016-02-07 04:26:44.874858', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (442, 'magnam', '2016-02-07 04:26:44.876975', '2016-02-07 04:26:44.876975', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (443, 'illum', '2016-02-07 04:26:44.878942', '2016-02-07 04:26:44.878942', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (444, 'voluptas', '2016-02-07 04:26:44.880994', '2016-02-07 04:26:44.880994', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (445, 'quia', '2016-02-07 04:26:44.882818', '2016-02-07 04:26:44.882818', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (446, 'dolores', '2016-02-07 04:26:44.884960', '2016-02-07 04:26:44.884960', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (447, 'qui', '2016-02-07 04:26:44.887224', '2016-02-07 04:26:44.887224', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (448, 'voluptatum', '2016-02-07 04:26:44.889183', '2016-02-07 04:26:44.889183', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (449, 'laborum', '2016-02-07 04:26:44.890999', '2016-02-07 04:26:44.890999', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (450, 'ut', '2016-02-07 04:26:44.893050', '2016-02-07 04:26:44.893050', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (451, 'laborum', '2016-02-07 04:26:44.895069', '2016-02-07 04:26:44.895069', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (452, 'iure', '2016-02-07 04:26:44.897203', '2016-02-07 04:26:44.897203', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (453, 'maxime', '2016-02-07 04:26:44.899761', '2016-02-07 04:26:44.899761', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (454, 'non', '2016-02-07 04:26:44.901756', '2016-02-07 04:26:44.901756', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (455, 'odio', '2016-02-07 04:26:44.903627', '2016-02-07 04:26:44.903627', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (456, 'sunt', '2016-02-07 04:26:44.905581', '2016-02-07 04:26:44.905581', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (457, 'blanditiis', '2016-02-07 04:26:44.907579', '2016-02-07 04:26:44.907579', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (458, 'ex', '2016-02-07 04:26:44.909956', '2016-02-07 04:26:44.909956', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (459, 'qui', '2016-02-07 04:26:44.912096', '2016-02-07 04:26:44.912096', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (460, 'dolores', '2016-02-07 04:26:44.914179', '2016-02-07 04:26:44.914179', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (461, 'vel', '2016-02-07 04:26:44.916628', '2016-02-07 04:26:44.916628', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (462, 'doloremque', '2016-02-07 04:26:44.918557', '2016-02-07 04:26:44.918557', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (463, 'ducimus', '2016-02-07 04:26:44.920401', '2016-02-07 04:26:44.920401', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (464, 'recusandae', '2016-02-07 04:26:44.922372', '2016-02-07 04:26:44.922372', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (465, 'nostrum', '2016-02-07 04:26:44.924534', '2016-02-07 04:26:44.924534', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (466, 'natus', '2016-02-07 04:26:44.926406', '2016-02-07 04:26:44.926406', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (467, 'voluptates', '2016-02-07 04:26:44.928138', '2016-02-07 04:26:44.928138', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (468, 'qui', '2016-02-07 04:26:44.930006', '2016-02-07 04:26:44.930006', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (469, 'doloremque', '2016-02-07 04:26:44.932523', '2016-02-07 04:26:44.932523', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (470, 'iure', '2016-02-07 04:26:44.934596', '2016-02-07 04:26:44.934596', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (471, 'enim', '2016-02-07 04:26:44.936498', '2016-02-07 04:26:44.936498', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (472, 'nulla', '2016-02-07 04:26:44.938345', '2016-02-07 04:26:44.938345', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (473, 'et', '2016-02-07 04:26:44.940125', '2016-02-07 04:26:44.940125', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (474, 'accusantium', '2016-02-07 04:26:44.942028', '2016-02-07 04:26:44.942028', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (475, 'porro', '2016-02-07 04:26:44.951106', '2016-02-07 04:26:44.951106', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (476, 'ut', '2016-02-07 04:26:44.958219', '2016-02-07 04:26:44.958219', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (477, 'culpa', '2016-02-07 04:26:44.961945', '2016-02-07 04:26:44.961945', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (478, 'sit', '2016-02-07 04:26:44.964910', '2016-02-07 04:26:44.964910', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (479, 'asperiores', '2016-02-07 04:26:44.968131', '2016-02-07 04:26:44.968131', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (480, 'impedit', '2016-02-07 04:26:44.970205', '2016-02-07 04:26:44.970205', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (481, 'sequi', '2016-02-07 04:26:44.972407', '2016-02-07 04:26:44.972407', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (482, 'corrupti', '2016-02-07 04:26:44.974470', '2016-02-07 04:26:44.974470', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (483, 'rerum', '2016-02-07 04:26:44.977644', '2016-02-07 04:26:44.977644', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (484, 'enim', '2016-02-07 04:26:44.979697', '2016-02-07 04:26:44.979697', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (485, 'consequatur', '2016-02-07 04:26:44.981991', '2016-02-07 04:26:44.981991', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (486, 'amet', '2016-02-07 04:26:44.984120', '2016-02-07 04:26:44.984120', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (487, 'ut', '2016-02-07 04:26:44.985980', '2016-02-07 04:26:44.985980', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (488, 'suscipit', '2016-02-07 04:26:44.987809', '2016-02-07 04:26:44.987809', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (489, 'molestiae', '2016-02-07 04:26:44.989842', '2016-02-07 04:26:44.989842', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (490, 'rem', '2016-02-07 04:26:44.991782', '2016-02-07 04:26:44.991782', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (491, 'aut', '2016-02-07 04:26:44.993909', '2016-02-07 04:26:44.993909', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (492, 'impedit', '2016-02-07 04:26:44.996060', '2016-02-07 04:26:44.996060', NULL)
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (493, 'velit', '2016-02-07 04:26:44.998304', '2016-02-07 04:26:44.998304', NULL)[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (494, 'veniam', '2016-02-07 04:26:45.000381', '2016-02-07 04:26:45.000381', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (495, 'repellat', '2016-02-07 04:26:45.002266', '2016-02-07 04:26:45.002266', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (496, 'cumque', '2016-02-07 04:26:45.004032', '2016-02-07 04:26:45.004032', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (497, 'corporis', '2016-02-07 04:26:45.005916', '2016-02-07 04:26:45.005916', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (498, 'officiis', '2016-02-07 04:26:45.007937', '2016-02-07 04:26:45.007937', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (499, 'omnis', '2016-02-07 04:26:45.009897', '2016-02-07 04:26:45.009897', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (500, 'ea', '2016-02-07 04:26:45.011780', '2016-02-07 04:26:45.011780', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (501, 'rerum', '2016-02-07 04:26:45.013933', '2016-02-07 04:26:45.013933', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (502, 'magnam', '2016-02-07 04:26:45.016439', '2016-02-07 04:26:45.016439', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (503, 'nulla', '2016-02-07 04:26:45.018517', '2016-02-07 04:26:45.018517', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (504, 'repellendus', '2016-02-07 04:26:45.020618', '2016-02-07 04:26:45.020618', NULL)
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (505, 'soluta', '2016-02-07 04:26:45.022524', '2016-02-07 04:26:45.022524', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (506, 'enim', '2016-02-07 04:26:45.024431', '2016-02-07 04:26:45.024431', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (507, 'ratione', '2016-02-07 04:26:45.026535', '2016-02-07 04:26:45.026535', NULL)[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (508, 'repudiandae', '2016-02-07 04:26:45.028583', '2016-02-07 04:26:45.028583', NULL)
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (509, 'dignissimos', '2016-02-07 04:26:45.030713', '2016-02-07 04:26:45.030713', NULL)[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "asongs" ("id","title","created_at","updated_at","artist_id") VALUES (510, 'tenetur', '2016-02-07 04:26:45.032808', '2016-02-07 04:26:45.032808', NULL)
+  [1m[36m (0.9ms)[0m  [1mDROP TABLE "songs"[0m
+  [1m[35m (0.2ms)[0m  CREATE TABLE "songs" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='tindex_asongs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='tindex_asongs_on_artist_id' AND type='index'
+[0m
+  [1m[35m (1.7ms)[0m  SELECT * FROM "asongs"
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (1, 'Song 2', '2016-01-27 00:20:14.516774', '2016-01-27 00:20:14.516774')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (2, 'Flood', '2016-01-27 04:06:26.286464', '2016-01-27 04:06:26.286464')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (3, 'Mr. Brightside', '2016-02-07 04:26:43.623572', '2016-02-07 04:26:43.623572')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (4, 'Jenny Was a Friend of Mine', '2016-02-07 04:26:43.627134', '2016-02-07 04:26:43.627134')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (5, 'Jenny', '2016-02-07 04:26:43.631901', '2016-02-07 04:26:43.631901')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (6, 'Around the World', '2016-02-07 04:26:43.636929', '2016-02-07 04:26:43.636929')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (7, 'Harder, Better, Faster, Stronger', '2016-02-07 04:26:43.639941', '2016-02-07 04:26:43.639941')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (8, 'Where is My Mind?', '2016-02-07 04:26:43.644397', '2016-02-07 04:26:43.644397')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (9, 'Gigantic', '2016-02-07 04:26:43.647117', '2016-02-07 04:26:43.647117')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (10, 'Monkey Gone to Heaven', '2016-02-07 04:26:43.649652', '2016-02-07 04:26:43.649652')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (11, 'dolorem', '2016-02-07 04:26:43.982867', '2016-02-07 04:26:43.982867')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (12, 'praesentium', '2016-02-07 04:26:43.985450', '2016-02-07 04:26:43.985450')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (13, 'iusto', '2016-02-07 04:26:43.987551', '2016-02-07 04:26:43.987551')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (14, 'et', '2016-02-07 04:26:43.989547', '2016-02-07 04:26:43.989547')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (15, 'consectetur', '2016-02-07 04:26:43.991624', '2016-02-07 04:26:43.991624')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (16, 'ipsum', '2016-02-07 04:26:43.993653', '2016-02-07 04:26:43.993653')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (17, 'sed', '2016-02-07 04:26:43.995898', '2016-02-07 04:26:43.995898')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (18, 'velit', '2016-02-07 04:26:43.998464', '2016-02-07 04:26:43.998464')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (19, 'libero', '2016-02-07 04:26:44.000701', '2016-02-07 04:26:44.000701')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (20, 'dolorum', '2016-02-07 04:26:44.002573', '2016-02-07 04:26:44.002573')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (21, 'rerum', '2016-02-07 04:26:44.005202', '2016-02-07 04:26:44.005202')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (22, 'laboriosam', '2016-02-07 04:26:44.007291', '2016-02-07 04:26:44.007291')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (23, 'sed', '2016-02-07 04:26:44.009334', '2016-02-07 04:26:44.009334')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (24, 'libero', '2016-02-07 04:26:44.011145', '2016-02-07 04:26:44.011145')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (25, 'quidem', '2016-02-07 04:26:44.013201', '2016-02-07 04:26:44.013201')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (26, 'nihil', '2016-02-07 04:26:44.015256', '2016-02-07 04:26:44.015256')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (27, 'et', '2016-02-07 04:26:44.017444', '2016-02-07 04:26:44.017444')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (28, 'sit', '2016-02-07 04:26:44.019382', '2016-02-07 04:26:44.019382')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (29, 'omnis', '2016-02-07 04:26:44.021333', '2016-02-07 04:26:44.021333')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (30, 'et', '2016-02-07 04:26:44.023394', '2016-02-07 04:26:44.023394')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (31, 'odio', '2016-02-07 04:26:44.025467', '2016-02-07 04:26:44.025467')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (32, 'modi', '2016-02-07 04:26:44.027745', '2016-02-07 04:26:44.027745')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (33, 'ut', '2016-02-07 04:26:44.029784', '2016-02-07 04:26:44.029784')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (34, 'possimus', '2016-02-07 04:26:44.031832', '2016-02-07 04:26:44.031832')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (35, 'hic', '2016-02-07 04:26:44.033834', '2016-02-07 04:26:44.033834')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (36, 'laudantium', '2016-02-07 04:26:44.035781', '2016-02-07 04:26:44.035781')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (37, 'ratione', '2016-02-07 04:26:44.037944', '2016-02-07 04:26:44.037944')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (38, 'sint', '2016-02-07 04:26:44.040077', '2016-02-07 04:26:44.040077')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (39, 'aliquam', '2016-02-07 04:26:44.042148', '2016-02-07 04:26:44.042148')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (40, 'quo', '2016-02-07 04:26:44.044589', '2016-02-07 04:26:44.044589')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (41, 'a', '2016-02-07 04:26:44.047817', '2016-02-07 04:26:44.047817')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (42, 'quia', '2016-02-07 04:26:44.050254', '2016-02-07 04:26:44.050254')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (43, 'non', '2016-02-07 04:26:44.052580', '2016-02-07 04:26:44.052580')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (44, 'sint', '2016-02-07 04:26:44.055213', '2016-02-07 04:26:44.055213')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (45, 'nihil', '2016-02-07 04:26:44.057863', '2016-02-07 04:26:44.057863')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (46, 'laborum', '2016-02-07 04:26:44.060524', '2016-02-07 04:26:44.060524')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (47, 'officia', '2016-02-07 04:26:44.062918', '2016-02-07 04:26:44.062918')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (48, 'et', '2016-02-07 04:26:44.065131', '2016-02-07 04:26:44.065131')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (49, 'quos', '2016-02-07 04:26:44.066934', '2016-02-07 04:26:44.066934')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (50, 'ex', '2016-02-07 04:26:44.068680', '2016-02-07 04:26:44.068680')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (51, 'minima', '2016-02-07 04:26:44.070699', '2016-02-07 04:26:44.070699')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (52, 'quos', '2016-02-07 04:26:44.072769', '2016-02-07 04:26:44.072769')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (53, 'rerum', '2016-02-07 04:26:44.074593', '2016-02-07 04:26:44.074593')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (54, 'nemo', '2016-02-07 04:26:44.076307', '2016-02-07 04:26:44.076307')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (55, 'pariatur', '2016-02-07 04:26:44.078005', '2016-02-07 04:26:44.078005')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (56, 'explicabo', '2016-02-07 04:26:44.080362', '2016-02-07 04:26:44.080362')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (57, 'et', '2016-02-07 04:26:44.082394', '2016-02-07 04:26:44.082394')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (58, 'ad', '2016-02-07 04:26:44.084205', '2016-02-07 04:26:44.084205')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (59, 'ipsum', '2016-02-07 04:26:44.085990', '2016-02-07 04:26:44.085990')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (60, 'quis', '2016-02-07 04:26:44.087918', '2016-02-07 04:26:44.087918')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (61, 'laborum', '2016-02-07 04:26:44.089970', '2016-02-07 04:26:44.089970')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (62, 'cum', '2016-02-07 04:26:44.092312', '2016-02-07 04:26:44.092312')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (63, 'reiciendis', '2016-02-07 04:26:44.094267', '2016-02-07 04:26:44.094267')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (64, 'porro', '2016-02-07 04:26:44.096527', '2016-02-07 04:26:44.096527')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (65, 'voluptate', '2016-02-07 04:26:44.098666', '2016-02-07 04:26:44.098666')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (66, 'dignissimos', '2016-02-07 04:26:44.100578', '2016-02-07 04:26:44.100578')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (67, 'inventore', '2016-02-07 04:26:44.102647', '2016-02-07 04:26:44.102647')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (68, 'in', '2016-02-07 04:26:44.104835', '2016-02-07 04:26:44.104835')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (69, 'aut', '2016-02-07 04:26:44.106741', '2016-02-07 04:26:44.106741')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (70, 'laborum', '2016-02-07 04:26:44.108497', '2016-02-07 04:26:44.108497')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (71, 'sit', '2016-02-07 04:26:44.110216', '2016-02-07 04:26:44.110216')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (72, 'expedita', '2016-02-07 04:26:44.112219', '2016-02-07 04:26:44.112219')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (73, 'nemo', '2016-02-07 04:26:44.114396', '2016-02-07 04:26:44.114396')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (74, 'debitis', '2016-02-07 04:26:44.116301', '2016-02-07 04:26:44.116301')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (75, 'quia', '2016-02-07 04:26:44.118445', '2016-02-07 04:26:44.118445')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (76, 'architecto', '2016-02-07 04:26:44.120645', '2016-02-07 04:26:44.120645')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (77, 'et', '2016-02-07 04:26:44.122509', '2016-02-07 04:26:44.122509')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (78, 'omnis', '2016-02-07 04:26:44.124506', '2016-02-07 04:26:44.124506')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (79, 'quia', '2016-02-07 04:26:44.126557', '2016-02-07 04:26:44.126557')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (80, 'consectetur', '2016-02-07 04:26:44.128532', '2016-02-07 04:26:44.128532')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (81, 'animi', '2016-02-07 04:26:44.130552', '2016-02-07 04:26:44.130552')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (82, 'unde', '2016-02-07 04:26:44.132499', '2016-02-07 04:26:44.132499')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (83, 'iusto', '2016-02-07 04:26:44.134270', '2016-02-07 04:26:44.134270')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (84, 'hic', '2016-02-07 04:26:44.136356', '2016-02-07 04:26:44.136356')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (85, 'est', '2016-02-07 04:26:44.138284', '2016-02-07 04:26:44.138284')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (86, 'itaque', '2016-02-07 04:26:44.140341', '2016-02-07 04:26:44.140341')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (87, 'molestiae', '2016-02-07 04:26:44.142430', '2016-02-07 04:26:44.142430')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (88, 'a', '2016-02-07 04:26:44.144522', '2016-02-07 04:26:44.144522')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (89, 'magnam', '2016-02-07 04:26:44.146899', '2016-02-07 04:26:44.146899')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (90, 'et', '2016-02-07 04:26:44.149062', '2016-02-07 04:26:44.149062')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (91, 'placeat', '2016-02-07 04:26:44.150837', '2016-02-07 04:26:44.150837')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (92, 'ut', '2016-02-07 04:26:44.152791', '2016-02-07 04:26:44.152791')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (93, 'harum', '2016-02-07 04:26:44.154593', '2016-02-07 04:26:44.154593')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (94, 'minus', '2016-02-07 04:26:44.156670', '2016-02-07 04:26:44.156670')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (95, 'unde', '2016-02-07 04:26:44.158643', '2016-02-07 04:26:44.158643')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (96, 'voluptates', '2016-02-07 04:26:44.160663', '2016-02-07 04:26:44.160663')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (97, 'enim', '2016-02-07 04:26:44.162517', '2016-02-07 04:26:44.162517')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (98, 'voluptatem', '2016-02-07 04:26:44.164354', '2016-02-07 04:26:44.164354')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (99, 'perspiciatis', '2016-02-07 04:26:44.166141', '2016-02-07 04:26:44.166141')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (100, 'ex', '2016-02-07 04:26:44.168130', '2016-02-07 04:26:44.168130')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (101, 'deserunt', '2016-02-07 04:26:44.170093', '2016-02-07 04:26:44.170093')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (102, 'est', '2016-02-07 04:26:44.171868', '2016-02-07 04:26:44.171868')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (103, 'rerum', '2016-02-07 04:26:44.173555', '2016-02-07 04:26:44.173555')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (104, 'exercitationem', '2016-02-07 04:26:44.175399', '2016-02-07 04:26:44.175399')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (105, 'qui', '2016-02-07 04:26:44.177683', '2016-02-07 04:26:44.177683')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (106, 'sunt', '2016-02-07 04:26:44.180050', '2016-02-07 04:26:44.180050')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (107, 'est', '2016-02-07 04:26:44.182134', '2016-02-07 04:26:44.182134')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (108, 'magni', '2016-02-07 04:26:44.183947', '2016-02-07 04:26:44.183947')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (109, 'rerum', '2016-02-07 04:26:44.185701', '2016-02-07 04:26:44.185701')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (110, 'placeat', '2016-02-07 04:26:44.187456', '2016-02-07 04:26:44.187456')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (111, 'maxime', '2016-02-07 04:26:44.189346', '2016-02-07 04:26:44.189346')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (112, 'ipsa', '2016-02-07 04:26:44.191381', '2016-02-07 04:26:44.191381')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (113, 'et', '2016-02-07 04:26:44.193195', '2016-02-07 04:26:44.193195')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (114, 'et', '2016-02-07 04:26:44.194902', '2016-02-07 04:26:44.194902')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (115, 'beatae', '2016-02-07 04:26:44.196801', '2016-02-07 04:26:44.196801')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (116, 'aliquam', '2016-02-07 04:26:44.198882', '2016-02-07 04:26:44.198882')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (117, 'accusantium', '2016-02-07 04:26:44.201003', '2016-02-07 04:26:44.201003')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (118, 'repellendus', '2016-02-07 04:26:44.203009', '2016-02-07 04:26:44.203009')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (119, 'voluptas', '2016-02-07 04:26:44.204936', '2016-02-07 04:26:44.204936')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (120, 'est', '2016-02-07 04:26:44.206886', '2016-02-07 04:26:44.206886')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (121, 'sunt', '2016-02-07 04:26:44.209215', '2016-02-07 04:26:44.209215')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (122, 'et', '2016-02-07 04:26:44.211419', '2016-02-07 04:26:44.211419')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (123, 'nostrum', '2016-02-07 04:26:44.213608', '2016-02-07 04:26:44.213608')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (124, 'unde', '2016-02-07 04:26:44.215684', '2016-02-07 04:26:44.215684')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (125, 'ea', '2016-02-07 04:26:44.217466', '2016-02-07 04:26:44.217466')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (126, 'quis', '2016-02-07 04:26:44.219177', '2016-02-07 04:26:44.219177')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (127, 'non', '2016-02-07 04:26:44.221201', '2016-02-07 04:26:44.221201')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (128, 'iste', '2016-02-07 04:26:44.223230', '2016-02-07 04:26:44.223230')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (129, 'quidem', '2016-02-07 04:26:44.225148', '2016-02-07 04:26:44.225148')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (130, 'ea', '2016-02-07 04:26:44.226885', '2016-02-07 04:26:44.226885')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (131, 'totam', '2016-02-07 04:26:44.228626', '2016-02-07 04:26:44.228626')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (132, 'qui', '2016-02-07 04:26:44.230827', '2016-02-07 04:26:44.230827')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (133, 'qui', '2016-02-07 04:26:44.233177', '2016-02-07 04:26:44.233177')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (134, 'id', '2016-02-07 04:26:44.235346', '2016-02-07 04:26:44.235346')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (135, 'qui', '2016-02-07 04:26:44.237139', '2016-02-07 04:26:44.237139')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (136, 'alias', '2016-02-07 04:26:44.238814', '2016-02-07 04:26:44.238814')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (137, 'nostrum', '2016-02-07 04:26:44.240954', '2016-02-07 04:26:44.240954')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (138, 'cupiditate', '2016-02-07 04:26:44.243177', '2016-02-07 04:26:44.243177')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (139, 'laborum', '2016-02-07 04:26:44.245083', '2016-02-07 04:26:44.245083')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (140, 'inventore', '2016-02-07 04:26:44.247066', '2016-02-07 04:26:44.247066')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (141, 'voluptas', '2016-02-07 04:26:44.252026', '2016-02-07 04:26:44.252026')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (142, 'dicta', '2016-02-07 04:26:44.256021', '2016-02-07 04:26:44.256021')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (143, 'sunt', '2016-02-07 04:26:44.258316', '2016-02-07 04:26:44.258316')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (144, 'et', '2016-02-07 04:26:44.260195', '2016-02-07 04:26:44.260195')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (145, 'ea', '2016-02-07 04:26:44.261944', '2016-02-07 04:26:44.261944')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (146, 'error', '2016-02-07 04:26:44.264069', '2016-02-07 04:26:44.264069')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (147, 'a', '2016-02-07 04:26:44.266218', '2016-02-07 04:26:44.266218')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (148, 'dolor', '2016-02-07 04:26:44.268117', '2016-02-07 04:26:44.268117')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (149, 'qui', '2016-02-07 04:26:44.269906', '2016-02-07 04:26:44.269906')[0m
+  [1m[35m (0.8ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (150, 'veniam', '2016-02-07 04:26:44.271901', '2016-02-07 04:26:44.271901')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (151, 'ut', '2016-02-07 04:26:44.273744', '2016-02-07 04:26:44.273744')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (152, 'alias', '2016-02-07 04:26:44.275768', '2016-02-07 04:26:44.275768')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (153, 'doloremque', '2016-02-07 04:26:44.277869', '2016-02-07 04:26:44.277869')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (154, 'reiciendis', '2016-02-07 04:26:44.280180', '2016-02-07 04:26:44.280180')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (155, 'quo', '2016-02-07 04:26:44.282442', '2016-02-07 04:26:44.282442')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (156, 'reprehenderit', '2016-02-07 04:26:44.284312', '2016-02-07 04:26:44.284312')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (157, 'et', '2016-02-07 04:26:44.286024', '2016-02-07 04:26:44.286024')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (158, 'id', '2016-02-07 04:26:44.288093', '2016-02-07 04:26:44.288093')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (159, 'in', '2016-02-07 04:26:44.290237', '2016-02-07 04:26:44.290237')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (160, 'voluptatem', '2016-02-07 04:26:44.292074', '2016-02-07 04:26:44.292074')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (161, 'aut', '2016-02-07 04:26:44.293797', '2016-02-07 04:26:44.293797')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (162, 'et', '2016-02-07 04:26:44.295670', '2016-02-07 04:26:44.295670')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (163, 'et', '2016-02-07 04:26:44.297708', '2016-02-07 04:26:44.297708')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (164, 'veniam', '2016-02-07 04:26:44.299723', '2016-02-07 04:26:44.299723')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (165, 'quasi', '2016-02-07 04:26:44.301791', '2016-02-07 04:26:44.301791')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (166, 'unde', '2016-02-07 04:26:44.303835', '2016-02-07 04:26:44.303835')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (167, 'accusantium', '2016-02-07 04:26:44.305694', '2016-02-07 04:26:44.305694')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (168, 'quo', '2016-02-07 04:26:44.307630', '2016-02-07 04:26:44.307630')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (169, 'ut', '2016-02-07 04:26:44.309870', '2016-02-07 04:26:44.309870')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (170, 'quis', '2016-02-07 04:26:44.312310', '2016-02-07 04:26:44.312310')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (171, 'sed', '2016-02-07 04:26:44.314552', '2016-02-07 04:26:44.314552')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (172, 'expedita', '2016-02-07 04:26:44.316433', '2016-02-07 04:26:44.316433')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (173, 'voluptatem', '2016-02-07 04:26:44.318117', '2016-02-07 04:26:44.318117')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (174, 'impedit', '2016-02-07 04:26:44.319824', '2016-02-07 04:26:44.319824')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (175, 'possimus', '2016-02-07 04:26:44.321803', '2016-02-07 04:26:44.321803')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (176, 'et', '2016-02-07 04:26:44.323841', '2016-02-07 04:26:44.323841')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (177, 'nisi', '2016-02-07 04:26:44.325745', '2016-02-07 04:26:44.325745')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (178, 'aut', '2016-02-07 04:26:44.327557', '2016-02-07 04:26:44.327557')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (179, 'earum', '2016-02-07 04:26:44.329458', '2016-02-07 04:26:44.329458')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (180, 'in', '2016-02-07 04:26:44.331966', '2016-02-07 04:26:44.331966')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (181, 'nemo', '2016-02-07 04:26:44.334030', '2016-02-07 04:26:44.334030')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (182, 'totam', '2016-02-07 04:26:44.335875', '2016-02-07 04:26:44.335875')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (183, 'eos', '2016-02-07 04:26:44.337642', '2016-02-07 04:26:44.337642')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (184, 'consequatur', '2016-02-07 04:26:44.339337', '2016-02-07 04:26:44.339337')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (185, 'magni', '2016-02-07 04:26:44.341107', '2016-02-07 04:26:44.341107')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (186, 'exercitationem', '2016-02-07 04:26:44.343148', '2016-02-07 04:26:44.343148')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (187, 'modi', '2016-02-07 04:26:44.345377', '2016-02-07 04:26:44.345377')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (188, 'est', '2016-02-07 04:26:44.347425', '2016-02-07 04:26:44.347425')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (189, 'cum', '2016-02-07 04:26:44.349649', '2016-02-07 04:26:44.349649')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (190, 'omnis', '2016-02-07 04:26:44.351535', '2016-02-07 04:26:44.351535')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (191, 'pariatur', '2016-02-07 04:26:44.353532', '2016-02-07 04:26:44.353532')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (192, 'eius', '2016-02-07 04:26:44.355493', '2016-02-07 04:26:44.355493')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (193, 'aut', '2016-02-07 04:26:44.357519', '2016-02-07 04:26:44.357519')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (194, 'et', '2016-02-07 04:26:44.359367', '2016-02-07 04:26:44.359367')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (195, 'voluptatem', '2016-02-07 04:26:44.361045', '2016-02-07 04:26:44.361045')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (196, 'nemo', '2016-02-07 04:26:44.363202', '2016-02-07 04:26:44.363202')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (197, 'officia', '2016-02-07 04:26:44.365586', '2016-02-07 04:26:44.365586')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (198, 'facilis', '2016-02-07 04:26:44.367780', '2016-02-07 04:26:44.367780')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (199, 'aut', '2016-02-07 04:26:44.369713', '2016-02-07 04:26:44.369713')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (200, 'et', '2016-02-07 04:26:44.371483', '2016-02-07 04:26:44.371483')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (201, 'nostrum', '2016-02-07 04:26:44.373214', '2016-02-07 04:26:44.373214')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (202, 'quae', '2016-02-07 04:26:44.374888', '2016-02-07 04:26:44.374888')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (203, 'commodi', '2016-02-07 04:26:44.376918', '2016-02-07 04:26:44.376918')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (204, 'nobis', '2016-02-07 04:26:44.379003', '2016-02-07 04:26:44.379003')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (205, 'ad', '2016-02-07 04:26:44.381012', '2016-02-07 04:26:44.381012')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (206, 'repudiandae', '2016-02-07 04:26:44.382916', '2016-02-07 04:26:44.382916')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (207, 'quos', '2016-02-07 04:26:44.384867', '2016-02-07 04:26:44.384867')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (208, 'nihil', '2016-02-07 04:26:44.387040', '2016-02-07 04:26:44.387040')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (209, 'minus', '2016-02-07 04:26:44.389046', '2016-02-07 04:26:44.389046')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (210, 'culpa', '2016-02-07 04:26:44.391018', '2016-02-07 04:26:44.391018')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (211, 'consequatur', '2016-02-07 04:26:44.393508', '2016-02-07 04:26:44.393508')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (212, 'veniam', '2016-02-07 04:26:44.395457', '2016-02-07 04:26:44.395457')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (213, 'at', '2016-02-07 04:26:44.397449', '2016-02-07 04:26:44.397449')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (214, 'non', '2016-02-07 04:26:44.399637', '2016-02-07 04:26:44.399637')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (215, 'aspernatur', '2016-02-07 04:26:44.401748', '2016-02-07 04:26:44.401748')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (216, 'molestiae', '2016-02-07 04:26:44.403707', '2016-02-07 04:26:44.403707')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (217, 'excepturi', '2016-02-07 04:26:44.405473', '2016-02-07 04:26:44.405473')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (218, 'recusandae', '2016-02-07 04:26:44.407171', '2016-02-07 04:26:44.407171')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (219, 'corrupti', '2016-02-07 04:26:44.408915', '2016-02-07 04:26:44.408915')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (220, 'eaque', '2016-02-07 04:26:44.411179', '2016-02-07 04:26:44.411179')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (221, 'ut', '2016-02-07 04:26:44.413295', '2016-02-07 04:26:44.413295')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (222, 'quia', '2016-02-07 04:26:44.415228', '2016-02-07 04:26:44.415228')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (223, 'incidunt', '2016-02-07 04:26:44.416955', '2016-02-07 04:26:44.416955')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (224, 'voluptatem', '2016-02-07 04:26:44.418823', '2016-02-07 04:26:44.418823')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (225, 'quaerat', '2016-02-07 04:26:44.420557', '2016-02-07 04:26:44.420557')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (226, 'repudiandae', '2016-02-07 04:26:44.423120', '2016-02-07 04:26:44.423120')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (227, 'perferendis', '2016-02-07 04:26:44.426002', '2016-02-07 04:26:44.426002')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (228, 'accusamus', '2016-02-07 04:26:44.428086', '2016-02-07 04:26:44.428086')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (229, 'sequi', '2016-02-07 04:26:44.430395', '2016-02-07 04:26:44.430395')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (230, 'autem', '2016-02-07 04:26:44.432535', '2016-02-07 04:26:44.432535')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (231, 'distinctio', '2016-02-07 04:26:44.434902', '2016-02-07 04:26:44.434902')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (232, 'adipisci', '2016-02-07 04:26:44.437067', '2016-02-07 04:26:44.437067')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (233, 'qui', '2016-02-07 04:26:44.439213', '2016-02-07 04:26:44.439213')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (234, 'aspernatur', '2016-02-07 04:26:44.447165', '2016-02-07 04:26:44.447165')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (235, 'animi', '2016-02-07 04:26:44.452624', '2016-02-07 04:26:44.452624')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (236, 'aut', '2016-02-07 04:26:44.454842', '2016-02-07 04:26:44.454842')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (237, 'nulla', '2016-02-07 04:26:44.457156', '2016-02-07 04:26:44.457156')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (238, 'ratione', '2016-02-07 04:26:44.459597', '2016-02-07 04:26:44.459597')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (239, 'ut', '2016-02-07 04:26:44.461402', '2016-02-07 04:26:44.461402')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (240, 'quia', '2016-02-07 04:26:44.463236', '2016-02-07 04:26:44.463236')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (241, 'laboriosam', '2016-02-07 04:26:44.465475', '2016-02-07 04:26:44.465475')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (242, 'atque', '2016-02-07 04:26:44.467671', '2016-02-07 04:26:44.467671')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (243, 'corrupti', '2016-02-07 04:26:44.469579', '2016-02-07 04:26:44.469579')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (244, 'asperiores', '2016-02-07 04:26:44.471430', '2016-02-07 04:26:44.471430')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (245, 'dolorem', '2016-02-07 04:26:44.473304', '2016-02-07 04:26:44.473304')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (246, 'perspiciatis', '2016-02-07 04:26:44.475140', '2016-02-07 04:26:44.475140')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (247, 'laboriosam', '2016-02-07 04:26:44.477121', '2016-02-07 04:26:44.477121')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (248, 'id', '2016-02-07 04:26:44.479234', '2016-02-07 04:26:44.479234')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (249, 'est', '2016-02-07 04:26:44.481306', '2016-02-07 04:26:44.481306')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (250, 'similique', '2016-02-07 04:26:44.483303', '2016-02-07 04:26:44.483303')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (251, 'tempore', '2016-02-07 04:26:44.485316', '2016-02-07 04:26:44.485316')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (252, 'nesciunt', '2016-02-07 04:26:44.487259', '2016-02-07 04:26:44.487259')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (253, 'unde', '2016-02-07 04:26:44.489435', '2016-02-07 04:26:44.489435')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (254, 'non', '2016-02-07 04:26:44.491593', '2016-02-07 04:26:44.491593')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (255, 'sit', '2016-02-07 04:26:44.493524', '2016-02-07 04:26:44.493524')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (256, 'consequuntur', '2016-02-07 04:26:44.495363', '2016-02-07 04:26:44.495363')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (257, 'ut', '2016-02-07 04:26:44.497442', '2016-02-07 04:26:44.497442')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (258, 'molestiae', '2016-02-07 04:26:44.499651', '2016-02-07 04:26:44.499651')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (259, 'aut', '2016-02-07 04:26:44.501615', '2016-02-07 04:26:44.501615')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (260, 'qui', '2016-02-07 04:26:44.503560', '2016-02-07 04:26:44.503560')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (261, 'aspernatur', '2016-02-07 04:26:44.505568', '2016-02-07 04:26:44.505568')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (262, 'distinctio', '2016-02-07 04:26:44.507407', '2016-02-07 04:26:44.507407')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (263, 'sequi', '2016-02-07 04:26:44.509515', '2016-02-07 04:26:44.509515')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (264, 'voluptatibus', '2016-02-07 04:26:44.511517', '2016-02-07 04:26:44.511517')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (265, 'pariatur', '2016-02-07 04:26:44.513552', '2016-02-07 04:26:44.513552')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (266, 'animi', '2016-02-07 04:26:44.515626', '2016-02-07 04:26:44.515626')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (267, 'numquam', '2016-02-07 04:26:44.517480', '2016-02-07 04:26:44.517480')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (268, 'quia', '2016-02-07 04:26:44.519413', '2016-02-07 04:26:44.519413')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (269, 'et', '2016-02-07 04:26:44.521523', '2016-02-07 04:26:44.521523')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (270, 'ea', '2016-02-07 04:26:44.523616', '2016-02-07 04:26:44.523616')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (271, 'velit', '2016-02-07 04:26:44.525558', '2016-02-07 04:26:44.525558')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (272, 'laudantium', '2016-02-07 04:26:44.527400', '2016-02-07 04:26:44.527400')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (273, 'omnis', '2016-02-07 04:26:44.529240', '2016-02-07 04:26:44.529240')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (274, 'aut', '2016-02-07 04:26:44.531625', '2016-02-07 04:26:44.531625')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (275, 'qui', '2016-02-07 04:26:44.533782', '2016-02-07 04:26:44.533782')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (276, 'sunt', '2016-02-07 04:26:44.535689', '2016-02-07 04:26:44.535689')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (277, 'quas', '2016-02-07 04:26:44.537612', '2016-02-07 04:26:44.537612')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (278, 'et', '2016-02-07 04:26:44.539329', '2016-02-07 04:26:44.539329')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (279, 'quis', '2016-02-07 04:26:44.541094', '2016-02-07 04:26:44.541094')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (280, 'veniam', '2016-02-07 04:26:44.543179', '2016-02-07 04:26:44.543179')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (281, 'dolorum', '2016-02-07 04:26:44.545207', '2016-02-07 04:26:44.545207')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (282, 'qui', '2016-02-07 04:26:44.547838', '2016-02-07 04:26:44.547838')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (283, 'voluptatem', '2016-02-07 04:26:44.549770', '2016-02-07 04:26:44.549770')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (284, 'labore', '2016-02-07 04:26:44.551470', '2016-02-07 04:26:44.551470')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (285, 'ipsa', '2016-02-07 04:26:44.553286', '2016-02-07 04:26:44.553286')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (286, 'qui', '2016-02-07 04:26:44.555345', '2016-02-07 04:26:44.555345')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (287, 'eveniet', '2016-02-07 04:26:44.557248', '2016-02-07 04:26:44.557248')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (288, 'neque', '2016-02-07 04:26:44.559016', '2016-02-07 04:26:44.559016')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (289, 'laudantium', '2016-02-07 04:26:44.560670', '2016-02-07 04:26:44.560670')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (290, 'dolore', '2016-02-07 04:26:44.562640', '2016-02-07 04:26:44.562640')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (291, 'vitae', '2016-02-07 04:26:44.565351', '2016-02-07 04:26:44.565351')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (292, 'mollitia', '2016-02-07 04:26:44.567367', '2016-02-07 04:26:44.567367')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (293, 'nobis', '2016-02-07 04:26:44.569210', '2016-02-07 04:26:44.569210')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (294, 'maxime', '2016-02-07 04:26:44.571091', '2016-02-07 04:26:44.571091')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (295, 'quo', '2016-02-07 04:26:44.572890', '2016-02-07 04:26:44.572890')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (296, 'ut', '2016-02-07 04:26:44.574664', '2016-02-07 04:26:44.574664')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (297, 'accusantium', '2016-02-07 04:26:44.576816', '2016-02-07 04:26:44.576816')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (298, 'sint', '2016-02-07 04:26:44.578912', '2016-02-07 04:26:44.578912')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (299, 'ex', '2016-02-07 04:26:44.581032', '2016-02-07 04:26:44.581032')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (300, 'corrupti', '2016-02-07 04:26:44.583130', '2016-02-07 04:26:44.583130')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (301, 'ad', '2016-02-07 04:26:44.584984', '2016-02-07 04:26:44.584984')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (302, 'quos', '2016-02-07 04:26:44.587133', '2016-02-07 04:26:44.587133')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (303, 'quia', '2016-02-07 04:26:44.589284', '2016-02-07 04:26:44.589284')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (304, 'minima', '2016-02-07 04:26:44.591290', '2016-02-07 04:26:44.591290')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (305, 'dolorem', '2016-02-07 04:26:44.593028', '2016-02-07 04:26:44.593028')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (306, 'aut', '2016-02-07 04:26:44.595081', '2016-02-07 04:26:44.595081')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (307, 'odio', '2016-02-07 04:26:44.597181', '2016-02-07 04:26:44.597181')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (308, 'adipisci', '2016-02-07 04:26:44.599270', '2016-02-07 04:26:44.599270')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (309, 'reiciendis', '2016-02-07 04:26:44.601359', '2016-02-07 04:26:44.601359')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (310, 'nemo', '2016-02-07 04:26:44.603263', '2016-02-07 04:26:44.603263')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (311, 'repellendus', '2016-02-07 04:26:44.604950', '2016-02-07 04:26:44.604950')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (312, 'ad', '2016-02-07 04:26:44.606631', '2016-02-07 04:26:44.606631')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (313, 'harum', '2016-02-07 04:26:44.608602', '2016-02-07 04:26:44.608602')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (314, 'aliquam', '2016-02-07 04:26:44.610791', '2016-02-07 04:26:44.610791')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (315, 'totam', '2016-02-07 04:26:44.612694', '2016-02-07 04:26:44.612694')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (316, 'nihil', '2016-02-07 04:26:44.614589', '2016-02-07 04:26:44.614589')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (317, 'consequatur', '2016-02-07 04:26:44.616332', '2016-02-07 04:26:44.616332')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (318, 'amet', '2016-02-07 04:26:44.618574', '2016-02-07 04:26:44.618574')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (319, 'sint', '2016-02-07 04:26:44.620850', '2016-02-07 04:26:44.620850')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (320, 'ad', '2016-02-07 04:26:44.622857', '2016-02-07 04:26:44.622857')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (321, 'architecto', '2016-02-07 04:26:44.624716', '2016-02-07 04:26:44.624716')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (322, 'aut', '2016-02-07 04:26:44.626742', '2016-02-07 04:26:44.626742')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (323, 'omnis', '2016-02-07 04:26:44.628717', '2016-02-07 04:26:44.628717')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (324, 'vel', '2016-02-07 04:26:44.630602', '2016-02-07 04:26:44.630602')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (325, 'recusandae', '2016-02-07 04:26:44.632609', '2016-02-07 04:26:44.632609')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (326, 'explicabo', '2016-02-07 04:26:44.634613', '2016-02-07 04:26:44.634613')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (327, 'neque', '2016-02-07 04:26:44.636395', '2016-02-07 04:26:44.636395')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (328, 'ab', '2016-02-07 04:26:44.638176', '2016-02-07 04:26:44.638176')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (329, 'quis', '2016-02-07 04:26:44.640001', '2016-02-07 04:26:44.640001')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (330, 'tenetur', '2016-02-07 04:26:44.642297', '2016-02-07 04:26:44.642297')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (331, 'vel', '2016-02-07 04:26:44.644345', '2016-02-07 04:26:44.644345')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (332, 'dolores', '2016-02-07 04:26:44.646140', '2016-02-07 04:26:44.646140')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (333, 'aut', '2016-02-07 04:26:44.648136', '2016-02-07 04:26:44.648136')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (334, 'nihil', '2016-02-07 04:26:44.650208', '2016-02-07 04:26:44.650208')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (335, 'ut', '2016-02-07 04:26:44.652125', '2016-02-07 04:26:44.652125')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (336, 'saepe', '2016-02-07 04:26:44.654155', '2016-02-07 04:26:44.654155')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (337, 'at', '2016-02-07 04:26:44.656163', '2016-02-07 04:26:44.656163')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (338, 'ullam', '2016-02-07 04:26:44.657971', '2016-02-07 04:26:44.657971')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (339, 'ipsam', '2016-02-07 04:26:44.659745', '2016-02-07 04:26:44.659745')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (340, 'nemo', '2016-02-07 04:26:44.661433', '2016-02-07 04:26:44.661433')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (341, 'doloremque', '2016-02-07 04:26:44.663745', '2016-02-07 04:26:44.663745')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (342, 'qui', '2016-02-07 04:26:44.665958', '2016-02-07 04:26:44.665958')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (343, 'totam', '2016-02-07 04:26:44.667952', '2016-02-07 04:26:44.667952')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (344, 'autem', '2016-02-07 04:26:44.670051', '2016-02-07 04:26:44.670051')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (345, 'doloremque', '2016-02-07 04:26:44.671896', '2016-02-07 04:26:44.671896')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (346, 'qui', '2016-02-07 04:26:44.673691', '2016-02-07 04:26:44.673691')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (347, 'laudantium', '2016-02-07 04:26:44.675916', '2016-02-07 04:26:44.675916')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (348, 'nulla', '2016-02-07 04:26:44.677899', '2016-02-07 04:26:44.677899')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (349, 'animi', '2016-02-07 04:26:44.679872', '2016-02-07 04:26:44.679872')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (350, 'eum', '2016-02-07 04:26:44.682011', '2016-02-07 04:26:44.682011')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (351, 'at', '2016-02-07 04:26:44.683819', '2016-02-07 04:26:44.683819')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (352, 'velit', '2016-02-07 04:26:44.686073', '2016-02-07 04:26:44.686073')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (353, 'odio', '2016-02-07 04:26:44.687999', '2016-02-07 04:26:44.687999')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (354, 'ratione', '2016-02-07 04:26:44.689937', '2016-02-07 04:26:44.689937')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (355, 'nihil', '2016-02-07 04:26:44.691762', '2016-02-07 04:26:44.691762')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (356, 'ut', '2016-02-07 04:26:44.693444', '2016-02-07 04:26:44.693444')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (357, 'repudiandae', '2016-02-07 04:26:44.695184', '2016-02-07 04:26:44.695184')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (358, 'ut', '2016-02-07 04:26:44.697673', '2016-02-07 04:26:44.697673')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (359, 'ut', '2016-02-07 04:26:44.700106', '2016-02-07 04:26:44.700106')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (360, 'illo', '2016-02-07 04:26:44.701995', '2016-02-07 04:26:44.701995')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (361, 'provident', '2016-02-07 04:26:44.703717', '2016-02-07 04:26:44.703717')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (362, 'natus', '2016-02-07 04:26:44.705556', '2016-02-07 04:26:44.705556')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (363, 'saepe', '2016-02-07 04:26:44.707353', '2016-02-07 04:26:44.707353')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (364, 'dolorem', '2016-02-07 04:26:44.709329', '2016-02-07 04:26:44.709329')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (365, 'illum', '2016-02-07 04:26:44.711264', '2016-02-07 04:26:44.711264')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (366, 'dolores', '2016-02-07 04:26:44.713271', '2016-02-07 04:26:44.713271')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (367, 'excepturi', '2016-02-07 04:26:44.715264', '2016-02-07 04:26:44.715264')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (368, 'est', '2016-02-07 04:26:44.717133', '2016-02-07 04:26:44.717133')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (369, 'consequatur', '2016-02-07 04:26:44.719306', '2016-02-07 04:26:44.719306')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (370, 'doloribus', '2016-02-07 04:26:44.721531', '2016-02-07 04:26:44.721531')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (371, 'ut', '2016-02-07 04:26:44.723488', '2016-02-07 04:26:44.723488')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (372, 'quaerat', '2016-02-07 04:26:44.725337', '2016-02-07 04:26:44.725337')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (373, 'minima', '2016-02-07 04:26:44.727089', '2016-02-07 04:26:44.727089')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (374, 'ut', '2016-02-07 04:26:44.728790', '2016-02-07 04:26:44.728790')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (375, 'architecto', '2016-02-07 04:26:44.731408', '2016-02-07 04:26:44.731408')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (376, 'fugit', '2016-02-07 04:26:44.733345', '2016-02-07 04:26:44.733345')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (377, 'blanditiis', '2016-02-07 04:26:44.735096', '2016-02-07 04:26:44.735096')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (378, 'ut', '2016-02-07 04:26:44.736796', '2016-02-07 04:26:44.736796')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (379, 'facilis', '2016-02-07 04:26:44.738762', '2016-02-07 04:26:44.738762')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (380, 'quis', '2016-02-07 04:26:44.740478', '2016-02-07 04:26:44.740478')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (381, 'ab', '2016-02-07 04:26:44.742540', '2016-02-07 04:26:44.742540')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (382, 'et', '2016-02-07 04:26:44.744361', '2016-02-07 04:26:44.744361')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (383, 'voluptas', '2016-02-07 04:26:44.746306', '2016-02-07 04:26:44.746306')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (384, 'vel', '2016-02-07 04:26:44.748469', '2016-02-07 04:26:44.748469')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (385, 'iure', '2016-02-07 04:26:44.750377', '2016-02-07 04:26:44.750377')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (386, 'impedit', '2016-02-07 04:26:44.752490', '2016-02-07 04:26:44.752490')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (387, 'excepturi', '2016-02-07 04:26:44.754776', '2016-02-07 04:26:44.754776')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (388, 'placeat', '2016-02-07 04:26:44.756742', '2016-02-07 04:26:44.756742')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (389, 'autem', '2016-02-07 04:26:44.758504', '2016-02-07 04:26:44.758504')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (390, 'quia', '2016-02-07 04:26:44.760205', '2016-02-07 04:26:44.760205')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (391, 'ipsa', '2016-02-07 04:26:44.762023', '2016-02-07 04:26:44.762023')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (392, 'voluptas', '2016-02-07 04:26:44.764715', '2016-02-07 04:26:44.764715')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (393, 'numquam', '2016-02-07 04:26:44.766824', '2016-02-07 04:26:44.766824')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (394, 'quia', '2016-02-07 04:26:44.768751', '2016-02-07 04:26:44.768751')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (395, 'et', '2016-02-07 04:26:44.770833', '2016-02-07 04:26:44.770833')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (396, 'rerum', '2016-02-07 04:26:44.773475', '2016-02-07 04:26:44.773475')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (397, 'eum', '2016-02-07 04:26:44.775868', '2016-02-07 04:26:44.775868')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (398, 'praesentium', '2016-02-07 04:26:44.778036', '2016-02-07 04:26:44.778036')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (399, 'et', '2016-02-07 04:26:44.780619', '2016-02-07 04:26:44.780619')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (400, 'non', '2016-02-07 04:26:44.782833', '2016-02-07 04:26:44.782833')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (401, 'voluptates', '2016-02-07 04:26:44.784710', '2016-02-07 04:26:44.784710')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (402, 'quis', '2016-02-07 04:26:44.787468', '2016-02-07 04:26:44.787468')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (403, 'sed', '2016-02-07 04:26:44.789498', '2016-02-07 04:26:44.789498')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (404, 'incidunt', '2016-02-07 04:26:44.791446', '2016-02-07 04:26:44.791446')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (405, 'non', '2016-02-07 04:26:44.793739', '2016-02-07 04:26:44.793739')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (406, 'hic', '2016-02-07 04:26:44.795655', '2016-02-07 04:26:44.795655')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (407, 'voluptatem', '2016-02-07 04:26:44.798177', '2016-02-07 04:26:44.798177')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (408, 'adipisci', '2016-02-07 04:26:44.800241', '2016-02-07 04:26:44.800241')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (409, 'et', '2016-02-07 04:26:44.802315', '2016-02-07 04:26:44.802315')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (410, 'exercitationem', '2016-02-07 04:26:44.804266', '2016-02-07 04:26:44.804266')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (411, 'doloremque', '2016-02-07 04:26:44.805992', '2016-02-07 04:26:44.805992')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (412, 'iusto', '2016-02-07 04:26:44.808074', '2016-02-07 04:26:44.808074')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (413, 'molestiae', '2016-02-07 04:26:44.810099', '2016-02-07 04:26:44.810099')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (414, 'rem', '2016-02-07 04:26:44.811909', '2016-02-07 04:26:44.811909')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (415, 'praesentium', '2016-02-07 04:26:44.813916', '2016-02-07 04:26:44.813916')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (416, 'quo', '2016-02-07 04:26:44.816127', '2016-02-07 04:26:44.816127')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (417, 'aspernatur', '2016-02-07 04:26:44.818014', '2016-02-07 04:26:44.818014')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (418, 'voluptate', '2016-02-07 04:26:44.820884', '2016-02-07 04:26:44.820884')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (419, 'dolorem', '2016-02-07 04:26:44.823179', '2016-02-07 04:26:44.823179')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (420, 'quo', '2016-02-07 04:26:44.825055', '2016-02-07 04:26:44.825055')
+  [1m[36m (0.2ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (421, 'quia', '2016-02-07 04:26:44.827125', '2016-02-07 04:26:44.827125')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (422, 'libero', '2016-02-07 04:26:44.829035', '2016-02-07 04:26:44.829035')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (423, 'iste', '2016-02-07 04:26:44.831196', '2016-02-07 04:26:44.831196')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (424, 'sed', '2016-02-07 04:26:44.833435', '2016-02-07 04:26:44.833435')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (425, 'maxime', '2016-02-07 04:26:44.835459', '2016-02-07 04:26:44.835459')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (426, 'minima', '2016-02-07 04:26:44.837268', '2016-02-07 04:26:44.837268')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (427, 'nam', '2016-02-07 04:26:44.843372', '2016-02-07 04:26:44.843372')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (428, 'qui', '2016-02-07 04:26:44.845733', '2016-02-07 04:26:44.845733')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (429, 'explicabo', '2016-02-07 04:26:44.847784', '2016-02-07 04:26:44.847784')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (430, 'est', '2016-02-07 04:26:44.849820', '2016-02-07 04:26:44.849820')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (431, 'laudantium', '2016-02-07 04:26:44.851648', '2016-02-07 04:26:44.851648')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (432, 'rerum', '2016-02-07 04:26:44.854182', '2016-02-07 04:26:44.854182')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (433, 'possimus', '2016-02-07 04:26:44.856160', '2016-02-07 04:26:44.856160')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (434, 'qui', '2016-02-07 04:26:44.859984', '2016-02-07 04:26:44.859984')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (435, 'atque', '2016-02-07 04:26:44.862006', '2016-02-07 04:26:44.862006')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (436, 'velit', '2016-02-07 04:26:44.864488', '2016-02-07 04:26:44.864488')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (437, 'est', '2016-02-07 04:26:44.867148', '2016-02-07 04:26:44.867148')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (438, 'et', '2016-02-07 04:26:44.869008', '2016-02-07 04:26:44.869008')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (439, 'eos', '2016-02-07 04:26:44.870808', '2016-02-07 04:26:44.870808')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (440, 'qui', '2016-02-07 04:26:44.872527', '2016-02-07 04:26:44.872527')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (441, 'et', '2016-02-07 04:26:44.874858', '2016-02-07 04:26:44.874858')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (442, 'magnam', '2016-02-07 04:26:44.876975', '2016-02-07 04:26:44.876975')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (443, 'illum', '2016-02-07 04:26:44.878942', '2016-02-07 04:26:44.878942')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (444, 'voluptas', '2016-02-07 04:26:44.880994', '2016-02-07 04:26:44.880994')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (445, 'quia', '2016-02-07 04:26:44.882818', '2016-02-07 04:26:44.882818')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (446, 'dolores', '2016-02-07 04:26:44.884960', '2016-02-07 04:26:44.884960')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (447, 'qui', '2016-02-07 04:26:44.887224', '2016-02-07 04:26:44.887224')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (448, 'voluptatum', '2016-02-07 04:26:44.889183', '2016-02-07 04:26:44.889183')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (449, 'laborum', '2016-02-07 04:26:44.890999', '2016-02-07 04:26:44.890999')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (450, 'ut', '2016-02-07 04:26:44.893050', '2016-02-07 04:26:44.893050')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (451, 'laborum', '2016-02-07 04:26:44.895069', '2016-02-07 04:26:44.895069')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (452, 'iure', '2016-02-07 04:26:44.897203', '2016-02-07 04:26:44.897203')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (453, 'maxime', '2016-02-07 04:26:44.899761', '2016-02-07 04:26:44.899761')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (454, 'non', '2016-02-07 04:26:44.901756', '2016-02-07 04:26:44.901756')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (455, 'odio', '2016-02-07 04:26:44.903627', '2016-02-07 04:26:44.903627')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (456, 'sunt', '2016-02-07 04:26:44.905581', '2016-02-07 04:26:44.905581')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (457, 'blanditiis', '2016-02-07 04:26:44.907579', '2016-02-07 04:26:44.907579')[0m
+  [1m[35m (0.2ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (458, 'ex', '2016-02-07 04:26:44.909956', '2016-02-07 04:26:44.909956')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (459, 'qui', '2016-02-07 04:26:44.912096', '2016-02-07 04:26:44.912096')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (460, 'dolores', '2016-02-07 04:26:44.914179', '2016-02-07 04:26:44.914179')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (461, 'vel', '2016-02-07 04:26:44.916628', '2016-02-07 04:26:44.916628')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (462, 'doloremque', '2016-02-07 04:26:44.918557', '2016-02-07 04:26:44.918557')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (463, 'ducimus', '2016-02-07 04:26:44.920401', '2016-02-07 04:26:44.920401')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (464, 'recusandae', '2016-02-07 04:26:44.922372', '2016-02-07 04:26:44.922372')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (465, 'nostrum', '2016-02-07 04:26:44.924534', '2016-02-07 04:26:44.924534')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (466, 'natus', '2016-02-07 04:26:44.926406', '2016-02-07 04:26:44.926406')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (467, 'voluptates', '2016-02-07 04:26:44.928138', '2016-02-07 04:26:44.928138')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (468, 'qui', '2016-02-07 04:26:44.930006', '2016-02-07 04:26:44.930006')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (469, 'doloremque', '2016-02-07 04:26:44.932523', '2016-02-07 04:26:44.932523')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (470, 'iure', '2016-02-07 04:26:44.934596', '2016-02-07 04:26:44.934596')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (471, 'enim', '2016-02-07 04:26:44.936498', '2016-02-07 04:26:44.936498')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (472, 'nulla', '2016-02-07 04:26:44.938345', '2016-02-07 04:26:44.938345')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (473, 'et', '2016-02-07 04:26:44.940125', '2016-02-07 04:26:44.940125')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (474, 'accusantium', '2016-02-07 04:26:44.942028', '2016-02-07 04:26:44.942028')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (475, 'porro', '2016-02-07 04:26:44.951106', '2016-02-07 04:26:44.951106')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (476, 'ut', '2016-02-07 04:26:44.958219', '2016-02-07 04:26:44.958219')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (477, 'culpa', '2016-02-07 04:26:44.961945', '2016-02-07 04:26:44.961945')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (478, 'sit', '2016-02-07 04:26:44.964910', '2016-02-07 04:26:44.964910')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (479, 'asperiores', '2016-02-07 04:26:44.968131', '2016-02-07 04:26:44.968131')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (480, 'impedit', '2016-02-07 04:26:44.970205', '2016-02-07 04:26:44.970205')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (481, 'sequi', '2016-02-07 04:26:44.972407', '2016-02-07 04:26:44.972407')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (482, 'corrupti', '2016-02-07 04:26:44.974470', '2016-02-07 04:26:44.974470')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (483, 'rerum', '2016-02-07 04:26:44.977644', '2016-02-07 04:26:44.977644')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (484, 'enim', '2016-02-07 04:26:44.979697', '2016-02-07 04:26:44.979697')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (485, 'consequatur', '2016-02-07 04:26:44.981991', '2016-02-07 04:26:44.981991')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (486, 'amet', '2016-02-07 04:26:44.984120', '2016-02-07 04:26:44.984120')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (487, 'ut', '2016-02-07 04:26:44.985980', '2016-02-07 04:26:44.985980')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (488, 'suscipit', '2016-02-07 04:26:44.987809', '2016-02-07 04:26:44.987809')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (489, 'molestiae', '2016-02-07 04:26:44.989842', '2016-02-07 04:26:44.989842')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (490, 'rem', '2016-02-07 04:26:44.991782', '2016-02-07 04:26:44.991782')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (491, 'aut', '2016-02-07 04:26:44.993909', '2016-02-07 04:26:44.993909')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (492, 'impedit', '2016-02-07 04:26:44.996060', '2016-02-07 04:26:44.996060')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (493, 'velit', '2016-02-07 04:26:44.998304', '2016-02-07 04:26:44.998304')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (494, 'veniam', '2016-02-07 04:26:45.000381', '2016-02-07 04:26:45.000381')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (495, 'repellat', '2016-02-07 04:26:45.002266', '2016-02-07 04:26:45.002266')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (496, 'cumque', '2016-02-07 04:26:45.004032', '2016-02-07 04:26:45.004032')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (497, 'corporis', '2016-02-07 04:26:45.005916', '2016-02-07 04:26:45.005916')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (498, 'officiis', '2016-02-07 04:26:45.007937', '2016-02-07 04:26:45.007937')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (499, 'omnis', '2016-02-07 04:26:45.009897', '2016-02-07 04:26:45.009897')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (500, 'ea', '2016-02-07 04:26:45.011780', '2016-02-07 04:26:45.011780')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (501, 'rerum', '2016-02-07 04:26:45.013933', '2016-02-07 04:26:45.013933')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (502, 'magnam', '2016-02-07 04:26:45.016439', '2016-02-07 04:26:45.016439')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (503, 'nulla', '2016-02-07 04:26:45.018517', '2016-02-07 04:26:45.018517')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (504, 'repellendus', '2016-02-07 04:26:45.020618', '2016-02-07 04:26:45.020618')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (505, 'soluta', '2016-02-07 04:26:45.022524', '2016-02-07 04:26:45.022524')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (506, 'enim', '2016-02-07 04:26:45.024431', '2016-02-07 04:26:45.024431')
+  [1m[36m (0.1ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (507, 'ratione', '2016-02-07 04:26:45.026535', '2016-02-07 04:26:45.026535')[0m
+  [1m[35m (0.1ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (508, 'repudiandae', '2016-02-07 04:26:45.028583', '2016-02-07 04:26:45.028583')
+  [1m[36m (0.0ms)[0m  [1mINSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (509, 'dignissimos', '2016-02-07 04:26:45.030713', '2016-02-07 04:26:45.030713')[0m
+  [1m[35m (0.0ms)[0m  INSERT INTO "songs" ("id","title","created_at","updated_at") VALUES (510, 'tenetur', '2016-02-07 04:26:45.032808', '2016-02-07 04:26:45.032808')
+  [1m[36m (0.2ms)[0m  [1mDROP TABLE "asongs"[0m
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?  [["version", "20160126235547"]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddArtistToSong (20160126235547)
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36m (1.2ms)[0m  [1mALTER TABLE "songs" ADD "artist_id" integer[0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (0.8ms)[0m  [1mCREATE  INDEX "index_songs_on_artist_id" ON "songs" ("artist_id")[0m
+  [1m[35mSQL (0.2ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES (?)  [["version", "20160126235547"]]
+  [1m[36m (2.9ms)[0m  [1mcommit transaction[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.2ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.2ms)[0m  [1m            SELECT sql
+            FROM sqlite_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+            UNION ALL
+            SELECT sql
+            FROM sqlite_temp_master
+            WHERE name='index_songs_on_artist_id' AND type='index'
+[0m
