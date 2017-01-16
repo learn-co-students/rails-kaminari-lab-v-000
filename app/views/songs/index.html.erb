@@ -1,3 +1,5 @@
+<%= paginate @songs %>
+<%= page_entries_info @songs %>
 <ul>
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
