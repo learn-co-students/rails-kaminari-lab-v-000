@@ -2131,3 +2131,69 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-02-21 23:37:06 -0600
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/morganosborne/.rvm/gems/ruby-2.2.5/gems/railties-4.2.5/lib/rails/templates/rails/welcome/index.html.erb (1.3ms)
+Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/songs" for ::1 at 2017-02-21 23:37:09 -0600
+Processing by SongsController#index as HTML
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 0) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.5ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0
+  Rendered songs/index.html.erb within layouts/application (294.3ms)
+Completed 200 OK in 475ms (Views: 468.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/songs?page=2" for ::1 at 2017-02-21 23:37:15 -0600
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"2"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 20) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.6ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 20[0m
+  Rendered songs/index.html.erb within layouts/application (27.5ms)
+Completed 200 OK in 34ms (Views: 32.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs?page=3" for ::1 at 2017-02-21 23:37:20 -0600
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"3"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 40) subquery_for_count
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.7ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 40
+  Rendered songs/index.html.erb within layouts/application (30.4ms)
+Completed 200 OK in 37ms (Views: 35.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs?page=4" for ::1 at 2017-02-21 23:37:23 -0600
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"4"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 60) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (1.0ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 60[0m
+  Rendered songs/index.html.erb within layouts/application (55.5ms)
+Completed 200 OK in 62ms (Views: 60.5ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs?page=5" for ::1 at 2017-02-21 23:37:24 -0600
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"5"}
+  [1m[35m (0.2ms)[0m  SELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 80) subquery_for_count
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(*) FROM "songs"[0m
+  [1m[35mSong Load (0.9ms)[0m  SELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 80
+  Rendered songs/index.html.erb within layouts/application (38.8ms)
+Completed 200 OK in 45ms (Views: 43.6ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/songs?page=6" for ::1 at 2017-02-21 23:37:25 -0600
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"6"}
+  [1m[36m (0.2ms)[0m  [1mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "songs" LIMIT 20 OFFSET 100) subquery_for_count[0m
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (1.0ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 100[0m
+  Rendered songs/index.html.erb within layouts/application (31.4ms)
+Completed 200 OK in 38ms (Views: 36.8ms | ActiveRecord: 1.3ms)
