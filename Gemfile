@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'kaminari'
 
 gem 'rails', '4.2.5'
 gem 'sqlite3'
@@ -17,4 +18,3 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
 end
-
