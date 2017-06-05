@@ -1,3 +1,4 @@
+<%= paginate @songs, window: 3 %>
 <ul>
 <% @songs.each do |song| %>
   <li><%= display_artist(song) %> - <%= link_to song.title, song_path(song) %></li>
