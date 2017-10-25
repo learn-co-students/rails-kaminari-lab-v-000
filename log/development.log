@@ -2131,3 +2131,205 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs" for ::1 at 2017-03-16 14:53:50 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (1.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (320.4ms)
+Completed 200 OK in 557ms (Views: 543.7ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/songs" for ::1 at 2017-03-16 14:55:21 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.6ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (354.2ms)
+Completed 200 OK in 539ms (Views: 533.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/songs" for ::1 at 2017-03-16 14:55:23 -0400
+Processing by SongsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.5ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (46.7ms)
+Completed 200 OK in 58ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs" for ::1 at 2017-03-16 14:55:29 -0400
+Processing by SongsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.5ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 33ms (Views: 32.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-10-24 23:40:56 -0400
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by SongsController#index as HTML
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (2.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  Rendered songs/index.html.erb within layouts/application (286.6ms)
+Completed 200 OK in 449ms (Views: 442.1ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/songs/510/edit" for 127.0.0.1 at 2017-10-24 23:41:08 -0400
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"510"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 510]]
+  Rendered songs/edit.html.erb within layouts/application (6.4ms)
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 0.1ms)
+
+ActionView::Template::Error (undefined method `name' for #<Song:0x007fe6fa46a6c0>):
+    1: <h1>Editing <%= @song.name %></h1>
+    2: 
+    3: <%= render 'form' %>
+  app/views/songs/edit.html.erb:1:in `_app_views_songs_edit_html_erb__3728308801284339809_70315009001100'
+
+
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (5.4ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.5ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (33.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (75.7ms)
+
+
+Started GET "/songs/510/edit" for 127.0.0.1 at 2017-10-24 23:41:29 -0400
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"510"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 510]]
+  Rendered songs/_form.html.erb (8.3ms)
+  Rendered songs/edit.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 15ms (Views: 14.3ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/songs/510" for 127.0.0.1 at 2017-10-24 23:41:40 -0400
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"G5sOYGNlTT53mquEIg+m9QTZk9RWJpSuY0/ruG3EPPvDct+8Ez60tSh66gHptMDNf0nuLB8iTgcSCZ0Q6pihNw==", "song"=>{"title"=>"tenetur", "artist_name"=>"bon rolphy"}, "commit"=>"Update Song", "id"=>"510"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 510]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (1.0ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "bon rolphy"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "bon rolphy"], ["created_at", "2017-10-25 03:41:40.431214"], ["updated_at", "2017-10-25 03:41:40.431214"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["artist_id", 7], ["updated_at", "2017-10-25 03:41:40.433161"], ["id", 510]]
+  [1m[36m (0.8ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/songs/510
+Completed 302 Found in 13ms (ActiveRecord: 3.3ms)
+
+
+Started GET "/songs/510" for 127.0.0.1 at 2017-10-24 23:41:40 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"510"}
+  [1m[35mSong Load (0.2ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 510]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 7]]
+  Rendered songs/show.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-10-24 23:41:47 -0400
+Processing by SongsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.6ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 7]]
+  Rendered songs/index.html.erb within layouts/application (16.7ms)
+Completed 200 OK in 23ms (Views: 21.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/songs/509/edit" for 127.0.0.1 at 2017-10-24 23:41:50 -0400
+Processing by SongsController#edit as HTML
+  Parameters: {"id"=>"509"}
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1[0m  [["id", 509]]
+  Rendered songs/_form.html.erb (1.7ms)
+  Rendered songs/edit.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/songs/509" for 127.0.0.1 at 2017-10-24 23:41:57 -0400
+Processing by SongsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UH5sJZcd0Nnx7AFXPcEaxL6m6kNNXQeOtUyTN2CyNLKIl73550YpUq4MQNL2enz8xTaXuwRZ3SfECuWf5+6pfg==", "song"=>{"title"=>"dignissimos", "artist_name"=>"befoa thwoer"}, "commit"=>"Update Song", "id"=>"509"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 509]]
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35mArtist Load (0.2ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."name" = ? LIMIT 1  [["name", "befoa thwoer"]]
+  [1m[36mSQL (0.7ms)[0m  [1mINSERT INTO "artists" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "befoa thwoer"], ["created_at", "2017-10-25 03:41:57.493810"], ["updated_at", "2017-10-25 03:41:57.493810"]]
+  [1m[35mSQL (0.1ms)[0m  UPDATE "songs" SET "artist_id" = ?, "updated_at" = ? WHERE "songs"."id" = ?  [["artist_id", 8], ["updated_at", "2017-10-25 03:41:57.496332"], ["id", 509]]
+  [1m[36m (0.7ms)[0m  [1mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+  [1m[36m (0.0ms)[0m  [1mcommit transaction[0m
+Redirected to http://127.0.0.1:3000/songs/509
+Completed 302 Found in 9ms (ActiveRecord: 2.0ms)
+
+
+Started GET "/songs/509" for 127.0.0.1 at 2017-10-24 23:41:57 -0400
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"509"}
+  [1m[35mSong Load (0.1ms)[0m  SELECT  "songs".* FROM "songs" WHERE "songs"."id" = ? LIMIT 1  [["id", 509]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered songs/show.html.erb within layouts/application (1.2ms)
+Completed 200 OK in 8ms (Views: 7.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2017-10-24 23:41:59 -0400
+Processing by SongsController#index as HTML
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "songs"
+  [1m[36mSong Load (0.4ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."created_at" DESC LIMIT 20 OFFSET 0[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 7]]
+  [1m[36mArtist Load (0.1ms)[0m  [1mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1[0m  [["id", 8]]
+  Rendered songs/index.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 22ms (Views: 21.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/artists/8" for 127.0.0.1 at 2017-10-24 23:42:01 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendered artists/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 9ms (Views: 8.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/artists/8" for 127.0.0.1 at 2017-10-24 23:43:47 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  Rendered artists/show.html.erb within layouts/application (2.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined method `name' for nil:NilClass):
+    1: <%= @artist.name %>
+    2: <% @artist.songs.each do |song| %>
+    3: <%= link_to song.title, song_path(song) %>
+    4: <% end %>
+  app/views/artists/show.html.erb:1:in `_app_views_artists_show_html_erb__1085430757077915326_70315026804800'
+
+
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_source.erb (4.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/actionpack-4.2.5/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (43.8ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_markup.html.erb (0.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.2ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/console.js.erb within layouts/javascript (30.9ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/BradSmith/.rvm/gems/ruby-2.3.0/gems/web-console-2.2.1/lib/web_console/templates/index.html.erb (66.9ms)
+
+
+Started GET "/artists/8" for 127.0.0.1 at 2017-10-24 23:44:16 -0400
+Processing by ArtistsController#show as HTML
+  Parameters: {"id"=>"8"}
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists" WHERE "artists"."id" = ? LIMIT 1  [["id", 8]]
+  [1m[36mSong Load (0.2ms)[0m  [1mSELECT "songs".* FROM "songs" WHERE "songs"."artist_id" = ?[0m  [["artist_id", 8]]
+  Rendered artists/show.html.erb within layouts/application (16.5ms)
+Completed 200 OK in 30ms (Views: 24.4ms | ActiveRecord: 1.3ms)
+  [1m[36mSong Load (0.1ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."id" DESC LIMIT 1[0m
+  [1m[35mArtist Load (0.1ms)[0m  SELECT  "artists".* FROM "artists"  ORDER BY "artists"."id" ASC LIMIT 1
