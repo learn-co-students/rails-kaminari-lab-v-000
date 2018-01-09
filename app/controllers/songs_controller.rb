@@ -1,7 +1,7 @@
 class SongsController < ApplicationController
   def index
-    @songs = Song.all
-  end
+    @songs = Song.order(created_at: :desc).page(params[:page])
+    end
 
   def show
     @song = Song.find(params[:id])
@@ -50,4 +50,3 @@ class SongsController < ApplicationController
     params.require(:song).permit(:title, :artist_name)
   end
 end
-
