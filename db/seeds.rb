@@ -22,3 +22,4 @@ end
 500.times do
   Song.create(title: Faker::Lorem.word)
 end
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
