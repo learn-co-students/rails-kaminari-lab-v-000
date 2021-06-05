@@ -14,7 +14,8 @@ RSpec.describe SongsController do
       get :index
       expect(assigns[:songs].count).to eq 20
       songs1 = assigns[:songs]
-      get :index, page: 2
+      get :index, params: { page: 2 }
+      #get :index, page: 2
       expect(assigns[:songs]).to_not eq songs1
     end
   end

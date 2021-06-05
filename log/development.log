@@ -2131,3 +2131,35 @@ Processing by SongsController#index as HTML
   [1m[36mSong Load (0.8ms)[0m  [1mSELECT  "songs".* FROM "songs"  ORDER BY "songs"."title" ASC LIMIT 20 OFFSET 20[0m
   Rendered songs/index.html.erb within layouts/application (22.6ms)
 Completed 200 OK in 29ms (Views: 27.2ms | ActiveRecord: 1.0ms)
+Started GET "/" for ::1 at 2021-06-05 16:08:25 -0700
+  [1m[35m (4.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/Villy/.rvm/gems/ruby-2.6.1/gems/railties-6.1.3.2/lib/rails/templates/rails/welcome/index.html.erb (Duration: 24.6ms | Allocations: 415)
+Completed 200 OK in 44ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 2204)
+
+
+Started GET "/songs" for ::1 at 2021-06-05 16:08:29 -0700
+Processing by SongsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs"[0m
+  [1m[36mSong Load (2.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 0]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 2704.7ms | Allocations: 1098425)
+  Rendered layout layouts/application.html.erb (Duration: 2911.7ms | Allocations: 1387577)
+Completed 200 OK in 2954ms (Views: 2914.6ms | ActiveRecord: 4.7ms | Allocations: 1390580)
+
+
+Started GET "/songs?page=2" for ::1 at 2021-06-05 16:08:43 -0700
+Processing by SongsController#index as HTML
+  Parameters: {"page"=>"2"}
+  Rendering layout layouts/application.html.erb
+  Rendering songs/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "songs"[0m
+  [1m[36mSong Load (4.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs" ORDER BY "songs"."created_at" DESC LIMIT ? OFFSET ?[0m  [["LIMIT", 20], ["OFFSET", 20]]
+  Rendered songs/index.html.erb within layouts/application (Duration: 27.3ms | Allocations: 4790)
+  Rendered layout layouts/application.html.erb (Duration: 34.9ms | Allocations: 7904)
+Completed 200 OK in 38ms (Views: 32.4ms | ActiveRecord: 4.4ms | Allocations: 8219)
+
+
